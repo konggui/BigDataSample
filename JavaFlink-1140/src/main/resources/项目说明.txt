@@ -1,0 +1,47 @@
+目前最稳定技术版本： Flink 1.14.3 + Kafka 2.8.1 + Flume 1.9.0
+
+从Flink 1.12开始，Table API和SQL已经成熟了，可以在生产上放心使用
+
+动态表详解
+    1. 定义动态表 （点击事件流）
+        为了执行关系查询，首先得把数据流转换为动态表。（除了insert还有其他模式）
+    CREATE TABLE clicklog(
+        user VARCHAR, -- 用户名
+        url VARCHAR,  -- 用户访问的URL
+        cTime TIMESTAMP(3) -- 访问时间
+    ) WITH (...);
+
+    2. 连续查询
+        接下来，我们在动态表上执行连续查询生成一个新的动态表（结果表），连续查询不会停止，它会根据输入表新数据的到来不断查询
+    计算并更新结果表（多种模式，后面讲）。我们在click动态表上执行了group by count 聚合查询，随着时间推移，动态结果表随着
+    输入表每条数据的变化而变化。
+        查询1：
+            SELECT
+                user,
+                COUNT(url) as cnt
+            FROM clicks
+            GROUP BY user
+
+        查询2：(分组且滚动窗口1h统计)
+           SELECT
+                user,
+                TUMBLE_END(cTime, INTERVAL '1' HOURS) AS endT,
+                COUNT(url) AS cnt
+           FROM clicks
+           GROUP BY user, TUMBLE(cTime, INTERVAL '1' HOURS)
+
+
+Flink的Table API 和SQL 支持三种方式对动态表的更改进行编码。
+    -> 仅追加流(Append-only stream, 即 insert-only)
+        仅通过插入INSERT 更改来修改的动态表，可以直接转化为 "仅追加"流。这个流中发出的数据就是动态表中新增的每一个事件。
+    -> 撤回流 (Retract stream)
+        插入、更新、删除都支持的动态表会转换为撤回流。
+        撤回流包含两类消息：添加(Add)消息和撤回(Retract)消息。
+        动态表通过将INSERT编码为add、DELETE编码为retract消息、UPDATE编码为被更改行（更改前）的retract消息和更新后行（新行）的add消息，转换为retract流。
+    -> 更新插入流(Upsert流)
+        Upsert流包含两种类型的消息： Upsert消息和delete消息。转换为upsert流的动态表，需要有唯一的键(key)。
+        通过将INSERT 和UPDATE更改编码为upsert消息，将DELETE更改编码为DELETE消息，就可以将具有唯一键(Unique Key)的动态表转换为流。
+
+查询限制：
+    1.状态大小限制
+    2.计算更新成本限制

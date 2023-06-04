@@ -1,0 +1,42 @@
+{
+  "mappings" : {
+    "properties" : {
+      "id" : {
+        "type" : "keyword"
+      },
+      "step": {
+        "type" : "keyword"
+      },
+      "raw_data": {
+        "type" : "keyword"
+      },
+      "src" : {
+        "type" : "keyword"
+      },
+      "category" : {
+        "type" : "keyword"
+      },
+      "traceid" : {
+        "type" : "keyword"
+      },
+      "timestamp" : {
+        "type" : "keyword"
+      },
+      "errorcode" : {
+        "type" : "keyword"
+      },
+      "error_message" : {
+        "type" : "keyword"
+      },
+      "process_ext" : {
+        "type" : "keyword"
+      },
+      "extra_text" : {
+        "type" : "keyword"
+      },
+      "location" : {
+        "type" : "geo_point"
+      }
+    }
+  }
+}

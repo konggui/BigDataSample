@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Thu Apr 13 12:56:04 GMT+08:00 2023:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0187-78f8-8196-00004c122b40 
+on database directory E:\workspace\MapPOI\metastore_db with class loader org.apache.spark.sql.hive.client.IsolatedClientLoader$$anon$1@53f495f0 
+Loaded from file:/C:/Software/OfficeSoftware/Maven_Repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_241-b07
+user.dir=E:\workspace\MapPOI
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

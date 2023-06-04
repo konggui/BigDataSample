@@ -1,0 +1,441 @@
+2023-04-16 07:27:06 [main] INFO  TaskExecutorResourceUtils:281 - The configuration option taskmanager.cpu.cores required for local execution is not set, setting it to the maximal possible value.
+2023-04-16 07:27:06 [main] INFO  TaskExecutorResourceUtils:281 - The configuration option taskmanager.memory.task.heap.size required for local execution is not set, setting it to the maximal possible value.
+2023-04-16 07:27:06 [main] INFO  TaskExecutorResourceUtils:281 - The configuration option taskmanager.memory.task.off-heap.size required for local execution is not set, setting it to the maximal possible value.
+2023-04-16 07:27:06 [main] INFO  TaskExecutorResourceUtils:281 - The configuration option taskmanager.memory.network.min required for local execution is not set, setting it to its default value 64 mb.
+2023-04-16 07:27:06 [main] INFO  TaskExecutorResourceUtils:281 - The configuration option taskmanager.memory.network.max required for local execution is not set, setting it to its default value 64 mb.
+2023-04-16 07:27:06 [main] INFO  TaskExecutorResourceUtils:281 - The configuration option taskmanager.memory.managed.size required for local execution is not set, setting it to its default value 128 mb.
+2023-04-16 07:27:06 [main] INFO  MiniCluster:273 - Starting Flink Mini Cluster
+2023-04-16 07:27:07 [main] INFO  MiniCluster:285 - Starting Metrics Registry
+2023-04-16 07:27:07 [main] INFO  MetricRegistryImpl:126 - No metrics reporter configured, no metrics will be exposed/reported.
+2023-04-16 07:27:07 [main] INFO  MiniCluster:292 - Starting RPC Service(s)
+2023-04-16 07:27:07 [main] INFO  AkkaRpcServiceUtils:225 - Trying to start local actor system
+2023-04-16 07:27:07 [flink-akka.actor.default-dispatcher-5] INFO  Slf4jLogger:105 - Slf4jLogger started
+2023-04-16 07:27:08 [main] INFO  AkkaRpcServiceUtils:255 - Actor system started at akka://flink
+2023-04-16 07:27:08 [main] INFO  AkkaRpcServiceUtils:225 - Trying to start local actor system
+2023-04-16 07:27:08 [flink-metrics-6] INFO  Slf4jLogger:105 - Slf4jLogger started
+2023-04-16 07:27:08 [main] INFO  AkkaRpcServiceUtils:255 - Actor system started at akka://flink-metrics
+2023-04-16 07:27:08 [main] INFO  AkkaRpcService:262 - Starting RPC endpoint for org.apache.flink.runtime.metrics.dump.MetricQueryService at akka://flink-metrics/user/rpc/MetricQueryService .
+2023-04-16 07:27:08 [main] INFO  MiniCluster:500 - Starting high-availability services
+2023-04-16 07:27:08 [main] INFO  BlobServer:139 - Created BLOB server storage directory C:\Users\Q\AppData\Local\Temp\blobStore-596ff262-6101-4309-95da-d3cd9edd6a56
+2023-04-16 07:27:08 [main] INFO  BlobServer:214 - Started BLOB server at 0.0.0.0:64154 - max concurrent requests: 50 - max backlog: 1000
+2023-04-16 07:27:08 [main] INFO  PermanentBlobCache:90 - Created BLOB cache storage directory C:\Users\Q\AppData\Local\Temp\blobStore-6be60eff-3352-46eb-8465-46dfcaa1f04e
+2023-04-16 07:27:08 [main] INFO  TransientBlobCache:90 - Created BLOB cache storage directory C:\Users\Q\AppData\Local\Temp\blobStore-2f93133c-20d0-45d0-8910-aed2037fa52a
+2023-04-16 07:27:08 [main] INFO  MiniCluster:619 - Starting 1 TaskManager(s)
+2023-04-16 07:27:08 [main] INFO  TaskManagerRunner:494 - Starting TaskManager with ResourceID: 2309df25-9900-4350-a386-e95c70c12545
+2023-04-16 07:27:08 [main] INFO  TaskManagerServices:455 - Temporary file directory 'C:\Users\Q\AppData\Local\Temp': total 460 GB, usable 271 GB (58.91% usable)
+2023-04-16 07:27:08 [main] INFO  IOManager:60 - Created a new FileChannelManager for spilling of task related data to disk (joins, sorting, ...). Used directories:
+	C:\Users\Q\AppData\Local\Temp\flink-io-29b2457b-3441-41c5-b69c-f1891253a9cd
+2023-04-16 07:27:08 [main] INFO  NettyShuffleServiceFactory:122 - Created a new FileChannelManager for storing result partitions of BLOCKING shuffles. Used directories:
+	C:\Users\Q\AppData\Local\Temp\flink-netty-shuffle-60bd1aad-eae6-4a4a-b7f1-339294857dd1
+2023-04-16 07:27:08 [main] INFO  NetworkBufferPool:145 - Allocated 64 MB for network buffer pool (number of memory segments: 2048, bytes per segment: 32768).
+2023-04-16 07:27:08 [main] INFO  NettyShuffleEnvironment:328 - Starting the network environment and its components.
+2023-04-16 07:27:08 [main] INFO  KvStateService:92 - Starting the kvState service and its components.
+2023-04-16 07:27:08 [main] INFO  Configuration:824 - Config uses fallback configuration key 'akka.ask.timeout' instead of key 'taskmanager.slot.timeout'
+2023-04-16 07:27:08 [main] INFO  AkkaRpcService:262 - Starting RPC endpoint for org.apache.flink.runtime.taskexecutor.TaskExecutor at akka://flink/user/rpc/taskmanager_0 .
+2023-04-16 07:27:08 [flink-akka.actor.default-dispatcher-5] INFO  DefaultJobLeaderService:123 - Start job leader service.
+2023-04-16 07:27:08 [flink-akka.actor.default-dispatcher-5] INFO  FileCache:116 - User file cache uses directory C:\Users\Q\AppData\Local\Temp\flink-dist-cache-b38324a6-9806-440d-b155-754e17637746
+2023-04-16 07:27:08 [main] INFO  DispatcherRestEndpoint:173 - Starting rest endpoint.
+2023-04-16 07:27:08 [main] INFO  DispatcherRestEndpoint:124 - Failed to load web based job submission extension. Probable reason: flink-runtime-web is not in the classpath.
+2023-04-16 07:27:08 [main] WARN  WebMonitorUtils:82 - Log file environment variable 'log.file' is not set.
+2023-04-16 07:27:08 [main] WARN  WebMonitorUtils:88 - JobManager log files are unavailable in the web dashboard. Log file location not found in environment variable 'log.file' or configuration key 'web.log.path'.
+2023-04-16 07:27:09 [main] INFO  DispatcherRestEndpoint:295 - Rest endpoint listening at localhost:64206
+2023-04-16 07:27:09 [main] INFO  EmbeddedLeaderService:308 - Proposing leadership to contender http://localhost:64206
+2023-04-16 07:27:09 [mini-cluster-io-thread-1] INFO  DispatcherRestEndpoint:988 - http://localhost:64206 was granted leadership with leaderSessionID=acef6fb7-59a1-42a9-aa96-51a71f0c83ed
+2023-04-16 07:27:09 [mini-cluster-io-thread-1] INFO  EmbeddedLeaderService:256 - Received confirmation of leadership for leader http://localhost:64206 , session=acef6fb7-59a1-42a9-aa96-51a71f0c83ed
+2023-04-16 07:27:09 [main] INFO  EmbeddedLeaderService:308 - Proposing leadership to contender LeaderContender: DefaultDispatcherRunner
+2023-04-16 07:27:09 [main] INFO  ResourceManagerServiceImpl:126 - Starting resource manager service.
+2023-04-16 07:27:09 [main] INFO  EmbeddedLeaderService:308 - Proposing leadership to contender LeaderContender: ResourceManagerServiceImpl
+2023-04-16 07:27:09 [mini-cluster-io-thread-2] INFO  DefaultDispatcherRunner:107 - DefaultDispatcherRunner was granted leadership with leader id 341cf556-cf2e-4118-8525-dc3d05984a96. Creating new DispatcherLeaderProcess.
+2023-04-16 07:27:09 [pool-3-thread-1] INFO  ResourceManagerServiceImpl:189 - Resource manager service is granted leadership with session id 28162945-b77b-4215-af3e-05a512f9ea19.
+2023-04-16 07:27:09 [main] INFO  MiniCluster:425 - Flink Mini Cluster started successfully
+2023-04-16 07:27:09 [mini-cluster-io-thread-2] INFO  SessionDispatcherLeaderProcess:97 - Start SessionDispatcherLeaderProcess.
+2023-04-16 07:27:09 [mini-cluster-io-thread-1] INFO  SessionDispatcherLeaderProcess:117 - Recover all persisted job graphs.
+2023-04-16 07:27:09 [mini-cluster-io-thread-1] INFO  SessionDispatcherLeaderProcess:125 - Successfully recovered 0 persisted job graphs.
+2023-04-16 07:27:09 [mini-cluster-io-thread-1] INFO  AkkaRpcService:262 - Starting RPC endpoint for org.apache.flink.runtime.dispatcher.StandaloneDispatcher at akka://flink/user/rpc/dispatcher_1 .
+2023-04-16 07:27:09 [pool-3-thread-1] INFO  AkkaRpcService:262 - Starting RPC endpoint for org.apache.flink.runtime.resourcemanager.StandaloneResourceManager at akka://flink/user/rpc/resourcemanager_2 .
+2023-04-16 07:27:09 [mini-cluster-io-thread-1] INFO  EmbeddedLeaderService:256 - Received confirmation of leadership for leader akka://flink/user/rpc/dispatcher_1 , session=341cf556-cf2e-4118-8525-dc3d05984a96
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  StandaloneResourceManager:217 - Starting the resource manager.
+2023-04-16 07:27:09 [mini-cluster-io-thread-2] INFO  EmbeddedLeaderService:256 - Received confirmation of leadership for leader akka://flink/user/rpc/resourcemanager_2 , session=28162945-b77b-4215-af3e-05a512f9ea19
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  TaskExecutor:1315 - Connecting to ResourceManager akka://flink/user/rpc/resourcemanager_2(af3e05a512f9ea1928162945b77b4215).
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:162 - Resolved ResourceManager address, beginning registration
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  StandaloneResourceManager:912 - Registering TaskManager with ResourceID 2309df25-9900-4350-a386-e95c70c12545 (akka://flink/user/rpc/taskmanager_0) at ResourceManager
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  StandaloneDispatcher:300 - Received JobGraph submission 'HelloFlink' (ce300dcf6f398602f02ad1965814a71a).
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  TaskExecutor:99 - Successful registration at resource manager akka://flink/user/rpc/resourcemanager_2 under registration id 1bc8147040f9abe87857a52114e145b3.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  StandaloneDispatcher:375 - Submitting job 'HelloFlink' (ce300dcf6f398602f02ad1965814a71a).
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  EmbeddedLeaderService:308 - Proposing leadership to contender LeaderContender: JobMasterServiceLeadershipRunner
+2023-04-16 07:27:09 [jobmanager-io-thread-1] INFO  AkkaRpcService:262 - Starting RPC endpoint for org.apache.flink.runtime.jobmaster.JobMaster at akka://flink/user/rpc/jobmanager_3 .
+2023-04-16 07:27:09 [jobmanager-io-thread-1] INFO  JobMaster:295 - Initializing job 'HelloFlink' (ce300dcf6f398602f02ad1965814a71a).
+2023-04-16 07:27:09 [jobmanager-io-thread-1] INFO  JobMaster:99 - Using restart back off time strategy NoRestartBackoffTimeStrategy for HelloFlink (ce300dcf6f398602f02ad1965814a71a).
+2023-04-16 07:27:09 [jobmanager-io-thread-1] INFO  JobMaster:159 - Running initialization on master for job HelloFlink (ce300dcf6f398602f02ad1965814a71a).
+2023-04-16 07:27:09 [jobmanager-io-thread-1] INFO  JobMaster:183 - Successfully ran initialization on master in 0 ms.
+2023-04-16 07:27:09 [jobmanager-io-thread-1] INFO  DefaultExecutionTopology:362 - Built 1 pipelined regions in 0 ms
+2023-04-16 07:27:09 [jobmanager-io-thread-1] INFO  JobMaster:256 - No state backend has been configured, using default (HashMap) org.apache.flink.runtime.state.hashmap.HashMapStateBackend@50fe3e74
+2023-04-16 07:27:09 [jobmanager-io-thread-1] INFO  StateBackendLoader:314 - State backend loader loads the state backend as HashMapStateBackend
+2023-04-16 07:27:09 [jobmanager-io-thread-1] INFO  JobMaster:274 - Checkpoint storage is set to 'jobmanager'
+2023-04-16 07:27:09 [jobmanager-io-thread-1] INFO  CheckpointCoordinator:1526 - No checkpoint found during restore.
+2023-04-16 07:27:09 [jobmanager-io-thread-1] INFO  JobMaster:169 - Using failover strategy org.apache.flink.runtime.executiongraph.failover.flip1.RestartPipelinedRegionFailoverStrategy@7fb66217 for HelloFlink (ce300dcf6f398602f02ad1965814a71a).
+2023-04-16 07:27:09 [jobmanager-io-thread-1] INFO  EmbeddedLeaderService:256 - Received confirmation of leadership for leader akka://flink/user/rpc/jobmanager_3 , session=44c48e16-1025-48fb-8dbf-313bde778cdd
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  JobMaster:876 - Starting execution of job 'HelloFlink' (ce300dcf6f398602f02ad1965814a71a) under job master id 8dbf313bde778cdd44c48e16102548fb.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  JobMaster:209 - Starting scheduling with scheduling strategy [org.apache.flink.runtime.scheduler.strategy.PipelinedRegionSchedulingStrategy]
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1037 - Job HelloFlink (ce300dcf6f398602f02ad1965814a71a) switched from state CREATED to RUNNING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Source: Collection Source (1/1) (817b3bbd9fd56fbfabda4b8a08075e8f) switched from CREATED to SCHEDULED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (1/12) (0afde699cbb9077c44f8204009da470d) switched from CREATED to SCHEDULED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (2/12) (d5e6f997b17a021804288969ed28232c) switched from CREATED to SCHEDULED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (3/12) (0969d4a4f3f8a5ef87aeb6395400edf9) switched from CREATED to SCHEDULED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (4/12) (947a391d09d0f5f5851c05c31f8ae50c) switched from CREATED to SCHEDULED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (5/12) (de548c4b9cd19be9454c772ba06e9fd8) switched from CREATED to SCHEDULED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (6/12) (dae93e306ebac1c98ff777fff91cc843) switched from CREATED to SCHEDULED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (7/12) (06d15883a88c8e880214b4e3095e4878) switched from CREATED to SCHEDULED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (8/12) (544e79f959f439fe4c2ad06c005901fc) switched from CREATED to SCHEDULED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (9/12) (b238c1c643e1ec1ff698244b924061ff) switched from CREATED to SCHEDULED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (10/12) (22e16f637340db6f5843f0b59a8a66f4) switched from CREATED to SCHEDULED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (11/12) (ec193a90026e5eb55a289dfb4ff6eb63) switched from CREATED to SCHEDULED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (12/12) (1ef5a79bd8a3e5ee460df472d64049fd) switched from CREATED to SCHEDULED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  JobMaster:1051 - Connecting to ResourceManager akka://flink/user/rpc/resourcemanager_2(af3e05a512f9ea1928162945b77b4215)
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  JobMaster:162 - Resolved ResourceManager address, beginning registration
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  StandaloneResourceManager:342 - Registering job manager 8dbf313bde778cdd44c48e16102548fb@akka://flink/user/rpc/jobmanager_3 for job ce300dcf6f398602f02ad1965814a71a.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  StandaloneResourceManager:850 - Registered job manager 8dbf313bde778cdd44c48e16102548fb@akka://flink/user/rpc/jobmanager_3 for job ce300dcf6f398602f02ad1965814a71a.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  JobMaster:1075 - JobManager successfully registered at ResourceManager, leader id: af3e05a512f9ea1928162945b77b4215.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  DeclarativeSlotManager:266 - Received resource requirements from job ce300dcf6f398602f02ad1965814a71a: [ResourceRequirement{resourceProfile=ResourceProfile{UNKNOWN}, numberOfRequiredSlots=12}]
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1049 - Receive slot request 1cf2e68003eefeaf014d4a2a2531a831 for job ce300dcf6f398602f02ad1965814a71a from resource manager with leader id af3e05a512f9ea1928162945b77b4215.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1126 - Allocated slot for 1cf2e68003eefeaf014d4a2a2531a831.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  DefaultJobLeaderService:188 - Add job ce300dcf6f398602f02ad1965814a71a for job leader monitoring.
+2023-04-16 07:27:09 [mini-cluster-io-thread-3] INFO  DefaultJobLeaderService:346 - Try to register at job manager akka://flink/user/rpc/jobmanager_3 with leader id 44c48e16-1025-48fb-8dbf-313bde778cdd.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1049 - Receive slot request ba0e5f1c77542751c5460feb1bf9bd57 for job ce300dcf6f398602f02ad1965814a71a from resource manager with leader id af3e05a512f9ea1928162945b77b4215.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1126 - Allocated slot for ba0e5f1c77542751c5460feb1bf9bd57.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1049 - Receive slot request f902552780d7483dc63236b3693d41e1 for job ce300dcf6f398602f02ad1965814a71a from resource manager with leader id af3e05a512f9ea1928162945b77b4215.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1126 - Allocated slot for f902552780d7483dc63236b3693d41e1.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  DefaultJobLeaderService:162 - Resolved JobManager address, beginning registration
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1049 - Receive slot request 3a6ab01f4a15800f96900dbb10c35de9 for job ce300dcf6f398602f02ad1965814a71a from resource manager with leader id af3e05a512f9ea1928162945b77b4215.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1126 - Allocated slot for 3a6ab01f4a15800f96900dbb10c35de9.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1049 - Receive slot request 9a4bb4427fdebe7280e39b3d010d9149 for job ce300dcf6f398602f02ad1965814a71a from resource manager with leader id af3e05a512f9ea1928162945b77b4215.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1126 - Allocated slot for 9a4bb4427fdebe7280e39b3d010d9149.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1049 - Receive slot request 4c7fa29b26567dd58a6d66118f84e672 for job ce300dcf6f398602f02ad1965814a71a from resource manager with leader id af3e05a512f9ea1928162945b77b4215.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1126 - Allocated slot for 4c7fa29b26567dd58a6d66118f84e672.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1049 - Receive slot request cb0fd53e6af9e45f5a51b59bc5c6fe7d for job ce300dcf6f398602f02ad1965814a71a from resource manager with leader id af3e05a512f9ea1928162945b77b4215.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1126 - Allocated slot for cb0fd53e6af9e45f5a51b59bc5c6fe7d.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1049 - Receive slot request 734cdbd1f33280201b196be57aaf4a7f for job ce300dcf6f398602f02ad1965814a71a from resource manager with leader id af3e05a512f9ea1928162945b77b4215.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1126 - Allocated slot for 734cdbd1f33280201b196be57aaf4a7f.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1049 - Receive slot request 29ad5c4f0cdc12887f63de084eaa0620 for job ce300dcf6f398602f02ad1965814a71a from resource manager with leader id af3e05a512f9ea1928162945b77b4215.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1126 - Allocated slot for 29ad5c4f0cdc12887f63de084eaa0620.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1049 - Receive slot request aeb3bc0871971f1cbe334ecf15a3c76e for job ce300dcf6f398602f02ad1965814a71a from resource manager with leader id af3e05a512f9ea1928162945b77b4215.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1126 - Allocated slot for aeb3bc0871971f1cbe334ecf15a3c76e.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1049 - Receive slot request 6496d4eb1529316605b3ef9d0ac1b7ee for job ce300dcf6f398602f02ad1965814a71a from resource manager with leader id af3e05a512f9ea1928162945b77b4215.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1126 - Allocated slot for 6496d4eb1529316605b3ef9d0ac1b7ee.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1049 - Receive slot request ce6a3b0805c70e2c16f78b8db83bcaf4 for job ce300dcf6f398602f02ad1965814a71a from resource manager with leader id af3e05a512f9ea1928162945b77b4215.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1126 - Allocated slot for ce6a3b0805c70e2c16f78b8db83bcaf4.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  DefaultJobLeaderService:413 - Successful registration at job manager akka://flink/user/rpc/jobmanager_3 for job ce300dcf6f398602f02ad1965814a71a.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1617 - Establish JobManager connection for job ce300dcf6f398602f02ad1965814a71a.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:1468 - Offer reserved slots to the leader of job ce300dcf6f398602f02ad1965814a71a.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:1431 - Source: Collection Source (1/1) (817b3bbd9fd56fbfabda4b8a08075e8f) switched from SCHEDULED to DEPLOYING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:561 - Deploying Source: Collection Source (1/1) (attempt #0) with attempt id 817b3bbd9fd56fbfabda4b8a08075e8f to 2309df25-9900-4350-a386-e95c70c12545 @ 127.0.0.1 (dataPort=-1) with allocation id 4c7fa29b26567dd58a6d66118f84e672
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (1/12) (0afde699cbb9077c44f8204009da470d) switched from SCHEDULED to DEPLOYING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:561 - Deploying Map -> Sink: Print to Std. Out (1/12) (attempt #0) with attempt id 0afde699cbb9077c44f8204009da470d to 2309df25-9900-4350-a386-e95c70c12545 @ 127.0.0.1 (dataPort=-1) with allocation id 4c7fa29b26567dd58a6d66118f84e672
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskSlotTableImpl:388 - Activate slot 4c7fa29b26567dd58a6d66118f84e672.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (2/12) (d5e6f997b17a021804288969ed28232c) switched from SCHEDULED to DEPLOYING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:561 - Deploying Map -> Sink: Print to Std. Out (2/12) (attempt #0) with attempt id d5e6f997b17a021804288969ed28232c to 2309df25-9900-4350-a386-e95c70c12545 @ 127.0.0.1 (dataPort=-1) with allocation id 3a6ab01f4a15800f96900dbb10c35de9
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (3/12) (0969d4a4f3f8a5ef87aeb6395400edf9) switched from SCHEDULED to DEPLOYING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:561 - Deploying Map -> Sink: Print to Std. Out (3/12) (attempt #0) with attempt id 0969d4a4f3f8a5ef87aeb6395400edf9 to 2309df25-9900-4350-a386-e95c70c12545 @ 127.0.0.1 (dataPort=-1) with allocation id 9a4bb4427fdebe7280e39b3d010d9149
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (4/12) (947a391d09d0f5f5851c05c31f8ae50c) switched from SCHEDULED to DEPLOYING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:561 - Deploying Map -> Sink: Print to Std. Out (4/12) (attempt #0) with attempt id 947a391d09d0f5f5851c05c31f8ae50c to 2309df25-9900-4350-a386-e95c70c12545 @ 127.0.0.1 (dataPort=-1) with allocation id f902552780d7483dc63236b3693d41e1
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (5/12) (de548c4b9cd19be9454c772ba06e9fd8) switched from SCHEDULED to DEPLOYING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:561 - Deploying Map -> Sink: Print to Std. Out (5/12) (attempt #0) with attempt id de548c4b9cd19be9454c772ba06e9fd8 to 2309df25-9900-4350-a386-e95c70c12545 @ 127.0.0.1 (dataPort=-1) with allocation id 734cdbd1f33280201b196be57aaf4a7f
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (6/12) (dae93e306ebac1c98ff777fff91cc843) switched from SCHEDULED to DEPLOYING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:561 - Deploying Map -> Sink: Print to Std. Out (6/12) (attempt #0) with attempt id dae93e306ebac1c98ff777fff91cc843 to 2309df25-9900-4350-a386-e95c70c12545 @ 127.0.0.1 (dataPort=-1) with allocation id ba0e5f1c77542751c5460feb1bf9bd57
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (7/12) (06d15883a88c8e880214b4e3095e4878) switched from SCHEDULED to DEPLOYING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:561 - Deploying Map -> Sink: Print to Std. Out (7/12) (attempt #0) with attempt id 06d15883a88c8e880214b4e3095e4878 to 2309df25-9900-4350-a386-e95c70c12545 @ 127.0.0.1 (dataPort=-1) with allocation id aeb3bc0871971f1cbe334ecf15a3c76e
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (8/12) (544e79f959f439fe4c2ad06c005901fc) switched from SCHEDULED to DEPLOYING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:561 - Deploying Map -> Sink: Print to Std. Out (8/12) (attempt #0) with attempt id 544e79f959f439fe4c2ad06c005901fc to 2309df25-9900-4350-a386-e95c70c12545 @ 127.0.0.1 (dataPort=-1) with allocation id cb0fd53e6af9e45f5a51b59bc5c6fe7d
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (9/12) (b238c1c643e1ec1ff698244b924061ff) switched from SCHEDULED to DEPLOYING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:561 - Deploying Map -> Sink: Print to Std. Out (9/12) (attempt #0) with attempt id b238c1c643e1ec1ff698244b924061ff to 2309df25-9900-4350-a386-e95c70c12545 @ 127.0.0.1 (dataPort=-1) with allocation id 29ad5c4f0cdc12887f63de084eaa0620
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (10/12) (22e16f637340db6f5843f0b59a8a66f4) switched from SCHEDULED to DEPLOYING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:561 - Deploying Map -> Sink: Print to Std. Out (10/12) (attempt #0) with attempt id 22e16f637340db6f5843f0b59a8a66f4 to 2309df25-9900-4350-a386-e95c70c12545 @ 127.0.0.1 (dataPort=-1) with allocation id 1cf2e68003eefeaf014d4a2a2531a831
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (11/12) (ec193a90026e5eb55a289dfb4ff6eb63) switched from SCHEDULED to DEPLOYING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:561 - Deploying Map -> Sink: Print to Std. Out (11/12) (attempt #0) with attempt id ec193a90026e5eb55a289dfb4ff6eb63 to 2309df25-9900-4350-a386-e95c70c12545 @ 127.0.0.1 (dataPort=-1) with allocation id ce6a3b0805c70e2c16f78b8db83bcaf4
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (12/12) (1ef5a79bd8a3e5ee460df472d64049fd) switched from SCHEDULED to DEPLOYING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:561 - Deploying Map -> Sink: Print to Std. Out (12/12) (attempt #0) with attempt id 1ef5a79bd8a3e5ee460df472d64049fd to 2309df25-9900-4350-a386-e95c70c12545 @ 127.0.0.1 (dataPort=-1) with allocation id 6496d4eb1529316605b3ef9d0ac1b7ee
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  StateChangelogStorageLoader:79 - StateChangelogStorageLoader initialized with shortcut names {memory}.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  StateChangelogStorageLoader:96 - Creating a changelog storage with name 'memory'.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:741 - Received task Source: Collection Source (1/1)#0 (817b3bbd9fd56fbfabda4b8a08075e8f), deploy into slot with allocation id 4c7fa29b26567dd58a6d66118f84e672.
+2023-04-16 07:27:09 [Source: Collection Source (1/1)#0] INFO  Task:1090 - Source: Collection Source (1/1)#0 (817b3bbd9fd56fbfabda4b8a08075e8f) switched from CREATED to DEPLOYING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskSlotTableImpl:388 - Activate slot 4c7fa29b26567dd58a6d66118f84e672.
+2023-04-16 07:27:09 [Source: Collection Source (1/1)#0] INFO  Task:635 - Loading JAR files for task Source: Collection Source (1/1)#0 (817b3bbd9fd56fbfabda4b8a08075e8f) [DEPLOYING].
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:741 - Received task Map -> Sink: Print to Std. Out (1/12)#0 (0afde699cbb9077c44f8204009da470d), deploy into slot with allocation id 4c7fa29b26567dd58a6d66118f84e672.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskSlotTableImpl:388 - Activate slot 3a6ab01f4a15800f96900dbb10c35de9.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (1/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (1/12)#0 (0afde699cbb9077c44f8204009da470d) switched from CREATED to DEPLOYING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (1/12)#0] INFO  Task:635 - Loading JAR files for task Map -> Sink: Print to Std. Out (1/12)#0 (0afde699cbb9077c44f8204009da470d) [DEPLOYING].
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:741 - Received task Map -> Sink: Print to Std. Out (2/12)#0 (d5e6f997b17a021804288969ed28232c), deploy into slot with allocation id 3a6ab01f4a15800f96900dbb10c35de9.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (2/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (2/12)#0 (d5e6f997b17a021804288969ed28232c) switched from CREATED to DEPLOYING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskSlotTableImpl:388 - Activate slot 9a4bb4427fdebe7280e39b3d010d9149.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (2/12)#0] INFO  Task:635 - Loading JAR files for task Map -> Sink: Print to Std. Out (2/12)#0 (d5e6f997b17a021804288969ed28232c) [DEPLOYING].
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:741 - Received task Map -> Sink: Print to Std. Out (3/12)#0 (0969d4a4f3f8a5ef87aeb6395400edf9), deploy into slot with allocation id 9a4bb4427fdebe7280e39b3d010d9149.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskSlotTableImpl:388 - Activate slot f902552780d7483dc63236b3693d41e1.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (3/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (3/12)#0 (0969d4a4f3f8a5ef87aeb6395400edf9) switched from CREATED to DEPLOYING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (3/12)#0] INFO  Task:635 - Loading JAR files for task Map -> Sink: Print to Std. Out (3/12)#0 (0969d4a4f3f8a5ef87aeb6395400edf9) [DEPLOYING].
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:741 - Received task Map -> Sink: Print to Std. Out (4/12)#0 (947a391d09d0f5f5851c05c31f8ae50c), deploy into slot with allocation id f902552780d7483dc63236b3693d41e1.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (4/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (4/12)#0 (947a391d09d0f5f5851c05c31f8ae50c) switched from CREATED to DEPLOYING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskSlotTableImpl:388 - Activate slot 734cdbd1f33280201b196be57aaf4a7f.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (4/12)#0] INFO  Task:635 - Loading JAR files for task Map -> Sink: Print to Std. Out (4/12)#0 (947a391d09d0f5f5851c05c31f8ae50c) [DEPLOYING].
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:741 - Received task Map -> Sink: Print to Std. Out (5/12)#0 (de548c4b9cd19be9454c772ba06e9fd8), deploy into slot with allocation id 734cdbd1f33280201b196be57aaf4a7f.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (5/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (5/12)#0 (de548c4b9cd19be9454c772ba06e9fd8) switched from CREATED to DEPLOYING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskSlotTableImpl:388 - Activate slot ba0e5f1c77542751c5460feb1bf9bd57.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (5/12)#0] INFO  Task:635 - Loading JAR files for task Map -> Sink: Print to Std. Out (5/12)#0 (de548c4b9cd19be9454c772ba06e9fd8) [DEPLOYING].
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (5/12)#0] INFO  StreamTask:256 - No state backend has been configured, using default (HashMap) org.apache.flink.runtime.state.hashmap.HashMapStateBackend@3c7e068c
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (4/12)#0] INFO  StreamTask:256 - No state backend has been configured, using default (HashMap) org.apache.flink.runtime.state.hashmap.HashMapStateBackend@5cbbe2ed
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (3/12)#0] INFO  StreamTask:256 - No state backend has been configured, using default (HashMap) org.apache.flink.runtime.state.hashmap.HashMapStateBackend@36424da2
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (2/12)#0] INFO  StreamTask:256 - No state backend has been configured, using default (HashMap) org.apache.flink.runtime.state.hashmap.HashMapStateBackend@51f4cdb9
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (4/12)#0] INFO  StateBackendLoader:314 - State backend loader loads the state backend as HashMapStateBackend
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (5/12)#0] INFO  StateBackendLoader:314 - State backend loader loads the state backend as HashMapStateBackend
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (3/12)#0] INFO  StateBackendLoader:314 - State backend loader loads the state backend as HashMapStateBackend
+2023-04-16 07:27:09 [Source: Collection Source (1/1)#0] INFO  StreamTask:256 - No state backend has been configured, using default (HashMap) org.apache.flink.runtime.state.hashmap.HashMapStateBackend@11850fc2
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (5/12)#0] INFO  StreamTask:274 - Checkpoint storage is set to 'jobmanager'
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (2/12)#0] INFO  StateBackendLoader:314 - State backend loader loads the state backend as HashMapStateBackend
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (1/12)#0] INFO  StreamTask:256 - No state backend has been configured, using default (HashMap) org.apache.flink.runtime.state.hashmap.HashMapStateBackend@1dd9efbd
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (3/12)#0] INFO  StreamTask:274 - Checkpoint storage is set to 'jobmanager'
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (4/12)#0] INFO  StreamTask:274 - Checkpoint storage is set to 'jobmanager'
+2023-04-16 07:27:09 [Source: Collection Source (1/1)#0] INFO  StateBackendLoader:314 - State backend loader loads the state backend as HashMapStateBackend
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (2/12)#0] INFO  StreamTask:274 - Checkpoint storage is set to 'jobmanager'
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (1/12)#0] INFO  StateBackendLoader:314 - State backend loader loads the state backend as HashMapStateBackend
+2023-04-16 07:27:09 [Source: Collection Source (1/1)#0] INFO  StreamTask:274 - Checkpoint storage is set to 'jobmanager'
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (1/12)#0] INFO  StreamTask:274 - Checkpoint storage is set to 'jobmanager'
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:741 - Received task Map -> Sink: Print to Std. Out (6/12)#0 (dae93e306ebac1c98ff777fff91cc843), deploy into slot with allocation id ba0e5f1c77542751c5460feb1bf9bd57.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskSlotTableImpl:388 - Activate slot aeb3bc0871971f1cbe334ecf15a3c76e.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (6/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (6/12)#0 (dae93e306ebac1c98ff777fff91cc843) switched from CREATED to DEPLOYING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (6/12)#0] INFO  Task:635 - Loading JAR files for task Map -> Sink: Print to Std. Out (6/12)#0 (dae93e306ebac1c98ff777fff91cc843) [DEPLOYING].
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (6/12)#0] INFO  StreamTask:256 - No state backend has been configured, using default (HashMap) org.apache.flink.runtime.state.hashmap.HashMapStateBackend@6db2fa5b
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (6/12)#0] INFO  StateBackendLoader:314 - State backend loader loads the state backend as HashMapStateBackend
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (6/12)#0] INFO  StreamTask:274 - Checkpoint storage is set to 'jobmanager'
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:741 - Received task Map -> Sink: Print to Std. Out (7/12)#0 (06d15883a88c8e880214b4e3095e4878), deploy into slot with allocation id aeb3bc0871971f1cbe334ecf15a3c76e.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (7/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (7/12)#0 (06d15883a88c8e880214b4e3095e4878) switched from CREATED to DEPLOYING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskSlotTableImpl:388 - Activate slot cb0fd53e6af9e45f5a51b59bc5c6fe7d.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (7/12)#0] INFO  Task:635 - Loading JAR files for task Map -> Sink: Print to Std. Out (7/12)#0 (06d15883a88c8e880214b4e3095e4878) [DEPLOYING].
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (7/12)#0] INFO  StreamTask:256 - No state backend has been configured, using default (HashMap) org.apache.flink.runtime.state.hashmap.HashMapStateBackend@6c4e4bff
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (7/12)#0] INFO  StateBackendLoader:314 - State backend loader loads the state backend as HashMapStateBackend
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (7/12)#0] INFO  StreamTask:274 - Checkpoint storage is set to 'jobmanager'
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (6/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (6/12)#0 (dae93e306ebac1c98ff777fff91cc843) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (2/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (2/12)#0 (d5e6f997b17a021804288969ed28232c) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (4/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (4/12)#0 (947a391d09d0f5f5851c05c31f8ae50c) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (3/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (3/12)#0 (0969d4a4f3f8a5ef87aeb6395400edf9) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (5/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (5/12)#0 (de548c4b9cd19be9454c772ba06e9fd8) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (7/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (7/12)#0 (06d15883a88c8e880214b4e3095e4878) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (1/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (1/12)#0 (0afde699cbb9077c44f8204009da470d) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:741 - Received task Map -> Sink: Print to Std. Out (8/12)#0 (544e79f959f439fe4c2ad06c005901fc), deploy into slot with allocation id cb0fd53e6af9e45f5a51b59bc5c6fe7d.
+2023-04-16 07:27:09 [Source: Collection Source (1/1)#0] INFO  Task:1090 - Source: Collection Source (1/1)#0 (817b3bbd9fd56fbfabda4b8a08075e8f) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (8/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (8/12)#0 (544e79f959f439fe4c2ad06c005901fc) switched from CREATED to DEPLOYING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskSlotTableImpl:388 - Activate slot 29ad5c4f0cdc12887f63de084eaa0620.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (8/12)#0] INFO  Task:635 - Loading JAR files for task Map -> Sink: Print to Std. Out (8/12)#0 (544e79f959f439fe4c2ad06c005901fc) [DEPLOYING].
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (4/12) (947a391d09d0f5f5851c05c31f8ae50c) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (8/12)#0] INFO  StreamTask:256 - No state backend has been configured, using default (HashMap) org.apache.flink.runtime.state.hashmap.HashMapStateBackend@88bad7f
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (8/12)#0] INFO  StateBackendLoader:314 - State backend loader loads the state backend as HashMapStateBackend
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (8/12)#0] INFO  StreamTask:274 - Checkpoint storage is set to 'jobmanager'
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (6/12) (dae93e306ebac1c98ff777fff91cc843) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (8/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (8/12)#0 (544e79f959f439fe4c2ad06c005901fc) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (2/12) (d5e6f997b17a021804288969ed28232c) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (3/12) (0969d4a4f3f8a5ef87aeb6395400edf9) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (5/12) (de548c4b9cd19be9454c772ba06e9fd8) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:741 - Received task Map -> Sink: Print to Std. Out (9/12)#0 (b238c1c643e1ec1ff698244b924061ff), deploy into slot with allocation id 29ad5c4f0cdc12887f63de084eaa0620.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (1/12) (0afde699cbb9077c44f8204009da470d) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (7/12) (06d15883a88c8e880214b4e3095e4878) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskSlotTableImpl:388 - Activate slot 1cf2e68003eefeaf014d4a2a2531a831.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (9/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (9/12)#0 (b238c1c643e1ec1ff698244b924061ff) switched from CREATED to DEPLOYING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (9/12)#0] INFO  Task:635 - Loading JAR files for task Map -> Sink: Print to Std. Out (9/12)#0 (b238c1c643e1ec1ff698244b924061ff) [DEPLOYING].
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  ExecutionGraph:1431 - Source: Collection Source (1/1) (817b3bbd9fd56fbfabda4b8a08075e8f) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (8/12) (544e79f959f439fe4c2ad06c005901fc) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (9/12)#0] INFO  StreamTask:256 - No state backend has been configured, using default (HashMap) org.apache.flink.runtime.state.hashmap.HashMapStateBackend@1f31b458
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (9/12)#0] INFO  StateBackendLoader:314 - State backend loader loads the state backend as HashMapStateBackend
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (9/12)#0] INFO  StreamTask:274 - Checkpoint storage is set to 'jobmanager'
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (9/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (9/12)#0 (b238c1c643e1ec1ff698244b924061ff) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (9/12) (b238c1c643e1ec1ff698244b924061ff) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:741 - Received task Map -> Sink: Print to Std. Out (10/12)#0 (22e16f637340db6f5843f0b59a8a66f4), deploy into slot with allocation id 1cf2e68003eefeaf014d4a2a2531a831.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskSlotTableImpl:388 - Activate slot ce6a3b0805c70e2c16f78b8db83bcaf4.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (10/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (10/12)#0 (22e16f637340db6f5843f0b59a8a66f4) switched from CREATED to DEPLOYING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (10/12)#0] INFO  Task:635 - Loading JAR files for task Map -> Sink: Print to Std. Out (10/12)#0 (22e16f637340db6f5843f0b59a8a66f4) [DEPLOYING].
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (10/12)#0] INFO  StreamTask:256 - No state backend has been configured, using default (HashMap) org.apache.flink.runtime.state.hashmap.HashMapStateBackend@675f1cc3
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (10/12)#0] INFO  StateBackendLoader:314 - State backend loader loads the state backend as HashMapStateBackend
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (10/12)#0] INFO  StreamTask:274 - Checkpoint storage is set to 'jobmanager'
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (10/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (10/12)#0 (22e16f637340db6f5843f0b59a8a66f4) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (10/12) (22e16f637340db6f5843f0b59a8a66f4) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:741 - Received task Map -> Sink: Print to Std. Out (11/12)#0 (ec193a90026e5eb55a289dfb4ff6eb63), deploy into slot with allocation id ce6a3b0805c70e2c16f78b8db83bcaf4.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (11/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (11/12)#0 (ec193a90026e5eb55a289dfb4ff6eb63) switched from CREATED to DEPLOYING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskSlotTableImpl:388 - Activate slot 6496d4eb1529316605b3ef9d0ac1b7ee.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (11/12)#0] INFO  Task:635 - Loading JAR files for task Map -> Sink: Print to Std. Out (11/12)#0 (ec193a90026e5eb55a289dfb4ff6eb63) [DEPLOYING].
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (11/12)#0] INFO  StreamTask:256 - No state backend has been configured, using default (HashMap) org.apache.flink.runtime.state.hashmap.HashMapStateBackend@92a3296
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (11/12)#0] INFO  StateBackendLoader:314 - State backend loader loads the state backend as HashMapStateBackend
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (11/12)#0] INFO  StreamTask:274 - Checkpoint storage is set to 'jobmanager'
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (11/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (11/12)#0 (ec193a90026e5eb55a289dfb4ff6eb63) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (11/12) (ec193a90026e5eb55a289dfb4ff6eb63) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskExecutor:741 - Received task Map -> Sink: Print to Std. Out (12/12)#0 (1ef5a79bd8a3e5ee460df472d64049fd), deploy into slot with allocation id 6496d4eb1529316605b3ef9d0ac1b7ee.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskSlotTableImpl:388 - Activate slot aeb3bc0871971f1cbe334ecf15a3c76e.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskSlotTableImpl:388 - Activate slot f902552780d7483dc63236b3693d41e1.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (12/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (12/12)#0 (1ef5a79bd8a3e5ee460df472d64049fd) switched from CREATED to DEPLOYING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskSlotTableImpl:388 - Activate slot 734cdbd1f33280201b196be57aaf4a7f.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskSlotTableImpl:388 - Activate slot 6496d4eb1529316605b3ef9d0ac1b7ee.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskSlotTableImpl:388 - Activate slot 1cf2e68003eefeaf014d4a2a2531a831.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (12/12)#0] INFO  Task:635 - Loading JAR files for task Map -> Sink: Print to Std. Out (12/12)#0 (1ef5a79bd8a3e5ee460df472d64049fd) [DEPLOYING].
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskSlotTableImpl:388 - Activate slot ba0e5f1c77542751c5460feb1bf9bd57.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskSlotTableImpl:388 - Activate slot cb0fd53e6af9e45f5a51b59bc5c6fe7d.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskSlotTableImpl:388 - Activate slot 29ad5c4f0cdc12887f63de084eaa0620.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskSlotTableImpl:388 - Activate slot ce6a3b0805c70e2c16f78b8db83bcaf4.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskSlotTableImpl:388 - Activate slot 4c7fa29b26567dd58a6d66118f84e672.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (12/12)#0] INFO  StreamTask:256 - No state backend has been configured, using default (HashMap) org.apache.flink.runtime.state.hashmap.HashMapStateBackend@3b9770bc
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskSlotTableImpl:388 - Activate slot 3a6ab01f4a15800f96900dbb10c35de9.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (12/12)#0] INFO  StateBackendLoader:314 - State backend loader loads the state backend as HashMapStateBackend
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TaskSlotTableImpl:388 - Activate slot 9a4bb4427fdebe7280e39b3d010d9149.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (12/12)#0] INFO  StreamTask:274 - Checkpoint storage is set to 'jobmanager'
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (12/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (12/12)#0 (1ef5a79bd8a3e5ee460df472d64049fd) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (12/12) (1ef5a79bd8a3e5ee460df472d64049fd) switched from DEPLOYING to INITIALIZING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (8/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (8/12)#0 (544e79f959f439fe4c2ad06c005901fc) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (2/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (2/12)#0 (d5e6f997b17a021804288969ed28232c) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (10/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (10/12)#0 (22e16f637340db6f5843f0b59a8a66f4) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (12/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (12/12)#0 (1ef5a79bd8a3e5ee460df472d64049fd) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (3/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (3/12)#0 (0969d4a4f3f8a5ef87aeb6395400edf9) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (1/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (1/12)#0 (0afde699cbb9077c44f8204009da470d) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (7/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (7/12)#0 (06d15883a88c8e880214b4e3095e4878) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (9/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (9/12)#0 (b238c1c643e1ec1ff698244b924061ff) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (6/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (6/12)#0 (dae93e306ebac1c98ff777fff91cc843) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (4/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (4/12)#0 (947a391d09d0f5f5851c05c31f8ae50c) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (11/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (11/12)#0 (ec193a90026e5eb55a289dfb4ff6eb63) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (8/12) (544e79f959f439fe4c2ad06c005901fc) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (5/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (5/12)#0 (de548c4b9cd19be9454c772ba06e9fd8) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (2/12) (d5e6f997b17a021804288969ed28232c) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (10/12) (22e16f637340db6f5843f0b59a8a66f4) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (12/12) (1ef5a79bd8a3e5ee460df472d64049fd) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (3/12) (0969d4a4f3f8a5ef87aeb6395400edf9) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (7/12) (06d15883a88c8e880214b4e3095e4878) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (1/12) (0afde699cbb9077c44f8204009da470d) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (9/12) (b238c1c643e1ec1ff698244b924061ff) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (6/12) (dae93e306ebac1c98ff777fff91cc843) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (4/12) (947a391d09d0f5f5851c05c31f8ae50c) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (11/12) (ec193a90026e5eb55a289dfb4ff6eb63) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (5/12) (de548c4b9cd19be9454c772ba06e9fd8) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [Source: Collection Source (1/1)#0] INFO  Task:1090 - Source: Collection Source (1/1)#0 (817b3bbd9fd56fbfabda4b8a08075e8f) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Source: Collection Source (1/1) (817b3bbd9fd56fbfabda4b8a08075e8f) switched from INITIALIZING to RUNNING.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (8/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (8/12)#0 (544e79f959f439fe4c2ad06c005901fc) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (5/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (5/12)#0 (de548c4b9cd19be9454c772ba06e9fd8) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (6/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (6/12)#0 (dae93e306ebac1c98ff777fff91cc843) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (11/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (11/12)#0 (ec193a90026e5eb55a289dfb4ff6eb63) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (3/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (3/12)#0 (0969d4a4f3f8a5ef87aeb6395400edf9) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (9/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (9/12)#0 (b238c1c643e1ec1ff698244b924061ff) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (6/12)#0] INFO  Task:877 - Freeing task resources for Map -> Sink: Print to Std. Out (6/12)#0 (dae93e306ebac1c98ff777fff91cc843).
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (3/12)#0] INFO  Task:877 - Freeing task resources for Map -> Sink: Print to Std. Out (3/12)#0 (0969d4a4f3f8a5ef87aeb6395400edf9).
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (5/12)#0] INFO  Task:877 - Freeing task resources for Map -> Sink: Print to Std. Out (5/12)#0 (de548c4b9cd19be9454c772ba06e9fd8).
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (9/12)#0] INFO  Task:877 - Freeing task resources for Map -> Sink: Print to Std. Out (9/12)#0 (b238c1c643e1ec1ff698244b924061ff).
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (1/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (1/12)#0 (0afde699cbb9077c44f8204009da470d) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (11/12)#0] INFO  Task:877 - Freeing task resources for Map -> Sink: Print to Std. Out (11/12)#0 (ec193a90026e5eb55a289dfb4ff6eb63).
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (1/12)#0] INFO  Task:877 - Freeing task resources for Map -> Sink: Print to Std. Out (1/12)#0 (0afde699cbb9077c44f8204009da470d).
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (2/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (2/12)#0 (d5e6f997b17a021804288969ed28232c) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (2/12)#0] INFO  Task:877 - Freeing task resources for Map -> Sink: Print to Std. Out (2/12)#0 (d5e6f997b17a021804288969ed28232c).
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (8/12)#0] INFO  Task:877 - Freeing task resources for Map -> Sink: Print to Std. Out (8/12)#0 (544e79f959f439fe4c2ad06c005901fc).
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (7/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (7/12)#0 (06d15883a88c8e880214b4e3095e4878) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (12/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (12/12)#0 (1ef5a79bd8a3e5ee460df472d64049fd) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (7/12)#0] INFO  Task:877 - Freeing task resources for Map -> Sink: Print to Std. Out (7/12)#0 (06d15883a88c8e880214b4e3095e4878).
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (4/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (4/12)#0 (947a391d09d0f5f5851c05c31f8ae50c) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (4/12)#0] INFO  Task:877 - Freeing task resources for Map -> Sink: Print to Std. Out (4/12)#0 (947a391d09d0f5f5851c05c31f8ae50c).
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (12/12)#0] INFO  Task:877 - Freeing task resources for Map -> Sink: Print to Std. Out (12/12)#0 (1ef5a79bd8a3e5ee460df472d64049fd).
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  TaskExecutor:1872 - Un-registering task and sending final execution state FINISHED to JobManager for task Map -> Sink: Print to Std. Out (2/12)#0 d5e6f997b17a021804288969ed28232c.
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (10/12)#0] INFO  Task:1090 - Map -> Sink: Print to Std. Out (10/12)#0 (22e16f637340db6f5843f0b59a8a66f4) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [Source: Collection Source (1/1)#0] INFO  Task:1090 - Source: Collection Source (1/1)#0 (817b3bbd9fd56fbfabda4b8a08075e8f) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [Source: Collection Source (1/1)#0] INFO  Task:877 - Freeing task resources for Source: Collection Source (1/1)#0 (817b3bbd9fd56fbfabda4b8a08075e8f).
+2023-04-16 07:27:09 [Map -> Sink: Print to Std. Out (10/12)#0] INFO  Task:877 - Freeing task resources for Map -> Sink: Print to Std. Out (10/12)#0 (22e16f637340db6f5843f0b59a8a66f4).
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  TaskExecutor:1872 - Un-registering task and sending final execution state FINISHED to JobManager for task Map -> Sink: Print to Std. Out (1/12)#0 0afde699cbb9077c44f8204009da470d.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  TaskExecutor:1872 - Un-registering task and sending final execution state FINISHED to JobManager for task Map -> Sink: Print to Std. Out (6/12)#0 dae93e306ebac1c98ff777fff91cc843.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (2/12) (d5e6f997b17a021804288969ed28232c) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  TaskExecutor:1872 - Un-registering task and sending final execution state FINISHED to JobManager for task Map -> Sink: Print to Std. Out (9/12)#0 b238c1c643e1ec1ff698244b924061ff.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  TaskExecutor:1872 - Un-registering task and sending final execution state FINISHED to JobManager for task Map -> Sink: Print to Std. Out (11/12)#0 ec193a90026e5eb55a289dfb4ff6eb63.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  TaskExecutor:1872 - Un-registering task and sending final execution state FINISHED to JobManager for task Map -> Sink: Print to Std. Out (7/12)#0 06d15883a88c8e880214b4e3095e4878.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  TaskExecutor:1872 - Un-registering task and sending final execution state FINISHED to JobManager for task Map -> Sink: Print to Std. Out (8/12)#0 544e79f959f439fe4c2ad06c005901fc.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  TaskExecutor:1872 - Un-registering task and sending final execution state FINISHED to JobManager for task Map -> Sink: Print to Std. Out (4/12)#0 947a391d09d0f5f5851c05c31f8ae50c.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  DeclarativeSlotManager:266 - Received resource requirements from job ce300dcf6f398602f02ad1965814a71a: [ResourceRequirement{resourceProfile=ResourceProfile{UNKNOWN}, numberOfRequiredSlots=11}]
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  TaskExecutor:1872 - Un-registering task and sending final execution state FINISHED to JobManager for task Map -> Sink: Print to Std. Out (5/12)#0 de548c4b9cd19be9454c772ba06e9fd8.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  TaskExecutor:1872 - Un-registering task and sending final execution state FINISHED to JobManager for task Map -> Sink: Print to Std. Out (3/12)#0 0969d4a4f3f8a5ef87aeb6395400edf9.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  TaskExecutor:1872 - Un-registering task and sending final execution state FINISHED to JobManager for task Map -> Sink: Print to Std. Out (12/12)#0 1ef5a79bd8a3e5ee460df472d64049fd.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  TaskExecutor:1872 - Un-registering task and sending final execution state FINISHED to JobManager for task Map -> Sink: Print to Std. Out (10/12)#0 22e16f637340db6f5843f0b59a8a66f4.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (1/12) (0afde699cbb9077c44f8204009da470d) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  TaskExecutor:1872 - Un-registering task and sending final execution state FINISHED to JobManager for task Source: Collection Source (1/1)#0 817b3bbd9fd56fbfabda4b8a08075e8f.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (6/12) (dae93e306ebac1c98ff777fff91cc843) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  DeclarativeSlotManager:266 - Received resource requirements from job ce300dcf6f398602f02ad1965814a71a: [ResourceRequirement{resourceProfile=ResourceProfile{UNKNOWN}, numberOfRequiredSlots=10}]
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (9/12) (b238c1c643e1ec1ff698244b924061ff) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  DeclarativeSlotManager:266 - Received resource requirements from job ce300dcf6f398602f02ad1965814a71a: [ResourceRequirement{resourceProfile=ResourceProfile{UNKNOWN}, numberOfRequiredSlots=9}]
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (11/12) (ec193a90026e5eb55a289dfb4ff6eb63) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  DeclarativeSlotManager:266 - Received resource requirements from job ce300dcf6f398602f02ad1965814a71a: [ResourceRequirement{resourceProfile=ResourceProfile{UNKNOWN}, numberOfRequiredSlots=8}]
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (7/12) (06d15883a88c8e880214b4e3095e4878) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  DeclarativeSlotManager:266 - Received resource requirements from job ce300dcf6f398602f02ad1965814a71a: [ResourceRequirement{resourceProfile=ResourceProfile{UNKNOWN}, numberOfRequiredSlots=7}]
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (8/12) (544e79f959f439fe4c2ad06c005901fc) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  DeclarativeSlotManager:266 - Received resource requirements from job ce300dcf6f398602f02ad1965814a71a: [ResourceRequirement{resourceProfile=ResourceProfile{UNKNOWN}, numberOfRequiredSlots=6}]
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (4/12) (947a391d09d0f5f5851c05c31f8ae50c) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  DeclarativeSlotManager:266 - Received resource requirements from job ce300dcf6f398602f02ad1965814a71a: [ResourceRequirement{resourceProfile=ResourceProfile{UNKNOWN}, numberOfRequiredSlots=5}]
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (5/12) (de548c4b9cd19be9454c772ba06e9fd8) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  DeclarativeSlotManager:266 - Received resource requirements from job ce300dcf6f398602f02ad1965814a71a: [ResourceRequirement{resourceProfile=ResourceProfile{UNKNOWN}, numberOfRequiredSlots=4}]
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (3/12) (0969d4a4f3f8a5ef87aeb6395400edf9) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  DeclarativeSlotManager:266 - Received resource requirements from job ce300dcf6f398602f02ad1965814a71a: [ResourceRequirement{resourceProfile=ResourceProfile{UNKNOWN}, numberOfRequiredSlots=3}]
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (12/12) (1ef5a79bd8a3e5ee460df472d64049fd) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  DeclarativeSlotManager:266 - Received resource requirements from job ce300dcf6f398602f02ad1965814a71a: [ResourceRequirement{resourceProfile=ResourceProfile{UNKNOWN}, numberOfRequiredSlots=2}]
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Map -> Sink: Print to Std. Out (10/12) (22e16f637340db6f5843f0b59a8a66f4) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  DeclarativeSlotManager:266 - Received resource requirements from job ce300dcf6f398602f02ad1965814a71a: [ResourceRequirement{resourceProfile=ResourceProfile{UNKNOWN}, numberOfRequiredSlots=1}]
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1431 - Source: Collection Source (1/1) (817b3bbd9fd56fbfabda4b8a08075e8f) switched from RUNNING to FINISHED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  ExecutionGraph:1037 - Job HelloFlink (ce300dcf6f398602f02ad1965814a71a) switched from state RUNNING to FINISHED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  DeclarativeSlotManager:264 - Clearing resource requirements of job ce300dcf6f398602f02ad1965814a71a
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  CheckpointCoordinator:409 - Stopping checkpoint coordinator for job ce300dcf6f398602f02ad1965814a71a.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  MiniCluster:543 - Shutting down Flink Mini Cluster
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  StandaloneDispatcher:866 - Job ce300dcf6f398602f02ad1965814a71a reached terminal state FINISHED.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  TaskExecutor:440 - Stopping TaskExecutor akka://flink/user/rpc/taskmanager_0.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  DispatcherRestEndpoint:354 - Shutting down rest endpoint.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  TaskExecutor:1395 - Close ResourceManager connection 54cad41a387a2bb53de48ac70c349b73.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  StandaloneResourceManager:1000 - Closing TaskExecutor connection 2309df25-9900-4350-a386-e95c70c12545 because: The TaskExecutor is shutting down.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  TaskExecutor:1646 - Close JobManager connection for job ce300dcf6f398602f02ad1965814a71a.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  TaskExecutorStateChangelogStoragesManager:132 - Shutting down TaskExecutorStateChangelogStoragesManager.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  JobMaster:401 - Stopping the JobMaster for job 'HelloFlink' (ce300dcf6f398602f02ad1965814a71a).
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  TaskSlotTableImpl:439 - Free slot TaskSlot(index:9, state:ALLOCATED, resource profile: ResourceProfile{taskHeapMemory=85.333gb (91625968981 bytes), taskOffHeapMemory=85.333gb (91625968981 bytes), managedMemory=10.667mb (11184810 bytes), networkMemory=5.333mb (5592405 bytes)}, allocationId: aeb3bc0871971f1cbe334ecf15a3c76e, jobId: ce300dcf6f398602f02ad1965814a71a).
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  TaskSlotTableImpl:439 - Free slot TaskSlot(index:2, state:ALLOCATED, resource profile: ResourceProfile{taskHeapMemory=85.333gb (91625968981 bytes), taskOffHeapMemory=85.333gb (91625968981 bytes), managedMemory=10.667mb (11184810 bytes), networkMemory=5.333mb (5592405 bytes)}, allocationId: f902552780d7483dc63236b3693d41e1, jobId: ce300dcf6f398602f02ad1965814a71a).
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  TaskSlotTableImpl:439 - Free slot TaskSlot(index:7, state:ALLOCATED, resource profile: ResourceProfile{taskHeapMemory=85.333gb (91625968981 bytes), taskOffHeapMemory=85.333gb (91625968981 bytes), managedMemory=10.667mb (11184810 bytes), networkMemory=5.333mb (5592405 bytes)}, allocationId: 734cdbd1f33280201b196be57aaf4a7f, jobId: ce300dcf6f398602f02ad1965814a71a).
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  TaskSlotTableImpl:439 - Free slot TaskSlot(index:10, state:ALLOCATED, resource profile: ResourceProfile{taskHeapMemory=85.333gb (91625968981 bytes), taskOffHeapMemory=85.333gb (91625968981 bytes), managedMemory=10.667mb (11184810 bytes), networkMemory=5.333mb (5592405 bytes)}, allocationId: 6496d4eb1529316605b3ef9d0ac1b7ee, jobId: ce300dcf6f398602f02ad1965814a71a).
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  TaskSlotTableImpl:439 - Free slot TaskSlot(index:0, state:ALLOCATED, resource profile: ResourceProfile{taskHeapMemory=85.333gb (91625968981 bytes), taskOffHeapMemory=85.333gb (91625968981 bytes), managedMemory=10.667mb (11184810 bytes), networkMemory=5.333mb (5592405 bytes)}, allocationId: 1cf2e68003eefeaf014d4a2a2531a831, jobId: ce300dcf6f398602f02ad1965814a71a).
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  TaskSlotTableImpl:439 - Free slot TaskSlot(index:1, state:ALLOCATED, resource profile: ResourceProfile{taskHeapMemory=85.333gb (91625968981 bytes), taskOffHeapMemory=85.333gb (91625968981 bytes), managedMemory=10.667mb (11184810 bytes), networkMemory=5.333mb (5592405 bytes)}, allocationId: ba0e5f1c77542751c5460feb1bf9bd57, jobId: ce300dcf6f398602f02ad1965814a71a).
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  DefaultDeclarativeSlotPool:474 - Releasing slot [aeb3bc0871971f1cbe334ecf15a3c76e].
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  TaskSlotTableImpl:439 - Free slot TaskSlot(index:6, state:ALLOCATED, resource profile: ResourceProfile{taskHeapMemory=85.333gb (91625968981 bytes), taskOffHeapMemory=85.333gb (91625968981 bytes), managedMemory=10.667mb (11184810 bytes), networkMemory=5.333mb (5592405 bytes)}, allocationId: cb0fd53e6af9e45f5a51b59bc5c6fe7d, jobId: ce300dcf6f398602f02ad1965814a71a).
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  TaskSlotTableImpl:439 - Free slot TaskSlot(index:8, state:ALLOCATED, resource profile: ResourceProfile{taskHeapMemory=85.333gb (91625968981 bytes), taskOffHeapMemory=85.333gb (91625968981 bytes), managedMemory=10.667mb (11184810 bytes), networkMemory=5.333mb (5592405 bytes)}, allocationId: 29ad5c4f0cdc12887f63de084eaa0620, jobId: ce300dcf6f398602f02ad1965814a71a).
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  DefaultDeclarativeSlotPool:474 - Releasing slot [f902552780d7483dc63236b3693d41e1].
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  TaskSlotTableImpl:439 - Free slot TaskSlot(index:11, state:ALLOCATED, resource profile: ResourceProfile{taskHeapMemory=85.333gb (91625968981 bytes), taskOffHeapMemory=85.333gb (91625968981 bytes), managedMemory=10.667mb (11184810 bytes), networkMemory=5.333mb (5592405 bytes)}, allocationId: ce6a3b0805c70e2c16f78b8db83bcaf4, jobId: ce300dcf6f398602f02ad1965814a71a).
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  DefaultDeclarativeSlotPool:474 - Releasing slot [734cdbd1f33280201b196be57aaf4a7f].
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  TaskSlotTableImpl:439 - Free slot TaskSlot(index:5, state:ALLOCATED, resource profile: ResourceProfile{taskHeapMemory=85.333gb (91625968981 bytes), taskOffHeapMemory=85.333gb (91625968981 bytes), managedMemory=10.667mb (11184810 bytes), networkMemory=5.333mb (5592405 bytes)}, allocationId: 4c7fa29b26567dd58a6d66118f84e672, jobId: ce300dcf6f398602f02ad1965814a71a).
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  DefaultDeclarativeSlotPool:474 - Releasing slot [6496d4eb1529316605b3ef9d0ac1b7ee].
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  TaskSlotTableImpl:439 - Free slot TaskSlot(index:3, state:ALLOCATED, resource profile: ResourceProfile{taskHeapMemory=85.333gb (91625968981 bytes), taskOffHeapMemory=85.333gb (91625968981 bytes), managedMemory=10.667mb (11184810 bytes), networkMemory=5.333mb (5592405 bytes)}, allocationId: 3a6ab01f4a15800f96900dbb10c35de9, jobId: ce300dcf6f398602f02ad1965814a71a).
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  TaskSlotTableImpl:439 - Free slot TaskSlot(index:4, state:ALLOCATED, resource profile: ResourceProfile{taskHeapMemory=85.333gb (91625968981 bytes), taskOffHeapMemory=85.333gb (91625968981 bytes), managedMemory=10.667mb (11184810 bytes), networkMemory=5.333mb (5592405 bytes)}, allocationId: 9a4bb4427fdebe7280e39b3d010d9149, jobId: ce300dcf6f398602f02ad1965814a71a).
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  DefaultDeclarativeSlotPool:474 - Releasing slot [1cf2e68003eefeaf014d4a2a2531a831].
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  DefaultDeclarativeSlotPool:474 - Releasing slot [ba0e5f1c77542751c5460feb1bf9bd57].
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  DefaultDeclarativeSlotPool:474 - Releasing slot [cb0fd53e6af9e45f5a51b59bc5c6fe7d].
+2023-04-16 07:27:09 [ForkJoinPool.commonPool-worker-9] INFO  DispatcherRestEndpoint:964 - Removing cache directory C:\Users\Q\AppData\Local\Temp\flink-web-ui
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  DefaultDeclarativeSlotPool:474 - Releasing slot [29ad5c4f0cdc12887f63de084eaa0620].
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  DefaultDeclarativeSlotPool:474 - Releasing slot [ce6a3b0805c70e2c16f78b8db83bcaf4].
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  DefaultDeclarativeSlotPool:474 - Releasing slot [4c7fa29b26567dd58a6d66118f84e672].
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  DefaultDeclarativeSlotPool:474 - Releasing slot [3a6ab01f4a15800f96900dbb10c35de9].
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  DefaultDeclarativeSlotPool:474 - Releasing slot [9a4bb4427fdebe7280e39b3d010d9149].
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  StandaloneCompletedCheckpointStore:91 - Shutting down
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  JobMaster:1125 - Close ResourceManager connection 54cad41a387a2bb53de48ac70c349b73: Stopping JobMaster for job 'HelloFlink' (ce300dcf6f398602f02ad1965814a71a).
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  StandaloneResourceManager:964 - Disconnect job manager 8dbf313bde778cdd44c48e16102548fb@akka://flink/user/rpc/jobmanager_3 for job ce300dcf6f398602f02ad1965814a71a from the resource manager.
+2023-04-16 07:27:09 [ForkJoinPool.commonPool-worker-9] INFO  DispatcherRestEndpoint:362 - Shut down complete.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  DefaultJobLeaderService:136 - Stop job leader service.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  TaskExecutorLocalStateStoresManager:231 - Shutting down TaskExecutorLocalStateStoresManager.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  StandaloneResourceManager:570 - Shut down cluster because application is in CANCELED, diagnostics DispatcherResourceManagerComponent has been closed..
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  DispatcherResourceManagerComponent:154 - Closing components.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  SessionDispatcherLeaderProcess:134 - Stopping SessionDispatcherLeaderProcess.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  StandaloneDispatcher:265 - Stopping dispatcher akka://flink/user/rpc/dispatcher_1.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-8] INFO  ResourceManagerServiceImpl:157 - Stopping resource manager service.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  StandaloneDispatcher:814 - Stopping all currently running jobs of dispatcher akka://flink/user/rpc/dispatcher_1.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  DeclarativeSlotManager:240 - Closing the slot manager.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  DeclarativeSlotManager:212 - Suspending the slot manager.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-9] INFO  StandaloneDispatcher:277 - Stopped dispatcher akka://flink/user/rpc/dispatcher_1.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  FileChannelManagerImpl:149 - FileChannelManager removed spill file directory C:\Users\Q\AppData\Local\Temp\flink-io-29b2457b-3441-41c5-b69c-f1891253a9cd
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  NettyShuffleEnvironment:347 - Shutting down the network environment and its components.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  FileChannelManagerImpl:149 - FileChannelManager removed spill file directory C:\Users\Q\AppData\Local\Temp\flink-netty-shuffle-60bd1aad-eae6-4a4a-b7f1-339294857dd1
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  KvStateService:122 - Shutting down the kvState service and its components.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  DefaultJobLeaderService:136 - Stop job leader service.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  FileCache:160 - removed file cache directory C:\Users\Q\AppData\Local\Temp\flink-dist-cache-b38324a6-9806-440d-b155-754e17637746
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-5] INFO  TaskExecutor:487 - Stopped TaskExecutor akka://flink/user/rpc/taskmanager_0.
+2023-04-16 07:27:09 [AkkaRpcService-Supervisor-Termination-Future-Executor-thread-1] INFO  AkkaRpcService:437 - Stopping Akka RPC service.
+2023-04-16 07:27:09 [flink-metrics-6] INFO  AkkaRpcService:437 - Stopping Akka RPC service.
+2023-04-16 07:27:09 [flink-metrics-6] INFO  AkkaRpcService:459 - Stopped Akka RPC service.
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  PermanentBlobCache:240 - Shutting down BLOB cache
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  TransientBlobCache:240 - Shutting down BLOB cache
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  BlobServer:347 - Stopped BLOB server at 0.0.0.0:64154
+2023-04-16 07:27:09 [flink-akka.actor.default-dispatcher-7] INFO  AkkaRpcService:459 - Stopped Akka RPC service.

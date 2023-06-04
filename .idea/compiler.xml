@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="UserProfile" />
+        <module name="SpringDemo" />
+        <module name="mappoi-common-spark" />
+        <module name="DesignPattern" />
+        <module name="SuanFa" />
+        <module name="platform" />
+        <module name="common" />
+        <module name="spark" />
+        <module name="AsStandardizeTask" />
+        <module name="mappoi-analyzer" />
+        <module name="mappoi-aggregator" />
+        <module name="mappoi-accessor" />
+        <module name="AsAccessTask" />
+        <module name="flink" />
+        <module name="AsAnalysisTask" />
+        <module name="AsDistributeTask" />
+        <module name="mappoi-common-flink113" />
+        <module name="mappoi-standardizer" />
+        <module name="flink113" />
+        <module name="JavaFlink-1140" />
+        <module name="mappoi-common-flink" />
+        <module name="mappoi-common-common" />
+        <module name="JavaFlink-112" />
+        <module name="JavaSpark-322" />
+        <module name="JavaSpark" />
+        <module name="AsAggregateTask" />
+        <module name="mappoi-distributor" />
+        <module name="JavaFlink-1143" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="hive" target="8" />
+      <module name="JavaSpark-322" target="8" />
+      <module name="mappoi-common-spark-scala" target="1.8" />
+      <module name="ScalaDemo" target="8" />
+      <module name="UserProfile" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="SpringDemo" options="-parameters" />
+      <module name="platform" options="-parameters" />
+    </option>
+  </component>
+</project>

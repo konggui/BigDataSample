@@ -1,0 +1,153 @@
+java -verbose
+
+hadoop: C:\Software\BigData\hadoop-3.3.5\sbin
+    版本：3.3.5
+    webUI: localhost:9870
+    文件端口: 9000
+    cd C:\Software\BigData\hadoop-3.3.5\sbin
+    start-all
+
+hive: C:/Software/BigData/apache-hive-3.1.3/bin
+    1) 初始化 Hive 元数据
+        drop database hive;
+        CREATE DATABASE IF NOT EXISTS hive DEFAULT CHARSET latin1 COLLATE latin1_general_ci;
+        初始化 Hive 元数据到 MySQL 数据库 (将apache-hive-3.0.0-bin\scripts\metastore\upgrade\mysql 目录下的 hive-schema-3.0.0.mysql.sql 导入MySQL)
+        hive --service schematool -dbType mysql -initSchema --verbose
+    2) 启动 Hive 服务
+      <!-- hive server2 thrift 端口 -->
+      <property>
+        <name>hive.server2.thrift.port</name>
+        <value>10001</value>
+      </property>
+
+        方式一：
+            1、启动 Hive 元数据
+            hive --service metastore &
+            2、启动 hive 命令行
+            hive
+        方式二：
+            1、启动 Hive 元数据
+            hive --service metastore &
+            2、启动 Hive server2 服务【HiveServer2 web：http://localhost:10002/】
+            hive --service hiveserver2 &
+            3、beeline客户端登录
+            beeline
+            !connect jdbc:hive2://localhost:10001
+
+            -- 开启本地模式
+            set hive.exec.mode.local.auto=true;
+
+            with t1 as (
+                select 'A' name, '171' heigt union all
+                select 'B' name, '172' heigt union all
+                select 'C' name, '173' heigt union all
+                select 'D' name, '174' heigt union all
+                select 'E' name, '175' heigt
+            )
+            select * from t1;
+
+    3) 注意事项
+        Hive的log4j和Hadoop的log4j包冲突
+        Hive初始化之前必须先启动HDFS
+        Hive数据库的元数据编码 latin1
+
+Arthas: C:\Software\OfficeSoftware\Arthas
+    java -jar arthas-boot.jar
+    thread -n 5
+    thread 20
+    heapdump --live E:/jvm.hprof
+    dashboard
+    trace 类路径 方法名
+
+
+create table src (key INT, value STRING)
+row format delimited fields terminated by '\u0001'
+stored as orc tblproperties("orc.compress"="snappy") ;
+
+CREATE TABLE src
+(key INT, value STRING)
+row format delimited fields terminated by '\u0001'
+STORED AS ORC
+LOCATION 'hdfs://localhost:9000/user/hive/warehouse/mappoi.db/src'
+orc tblproperties("orc.compress"="snappy")
+
+------------
+Mysql监控(mysqld_exporter + Prometheus + Grafana)
+    C:\Software\BigData\prometheus-2.39.1.windows-amd64
+        双击 prometheus.exe，运行prometheus (WebUI: http://localhost:9090)
+
+    C:\Software\BigData\GrafanaLabs
+        WebUI: http://localhost:3000/login (首次：admin/admin -> admin/123456)
+
+    进入Mysql创建和my.cnf文件中相同的用户 mysql -uroot -p123456
+    CREATE USER 'mysql_test'@'localhost' IDENTIFIED BY '123456' WITH MAX_USER_CONNECTIONS 3;
+    GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.* TO 'mysql_test'@'localhost';
+    FLUSH PRIVILEGES;
+    EXIT;
+    手动启动mysql_exporter.exe (cd C:\Software\BigData\mysqld_exporter-0.14.0.windows-amd64)
+        mysqld_exporter.exe --config.my-cnf=./my.cnf
+    【服务端口：msg="Listening on address" address=:9104】
+    根据端口到浏览器输入http://ip+端口/metrics，出现下图这种数据，启动成功
+
+    服务自启动设置：
+        # 创建服务文件，将下面代码写入
+        vim /usr/lib/systemd/system/mysqld_exporter.service
+
+        # 注意修改文件路径
+        [Unit]
+        Description=mysql Monitoring SystemDocumentation=mysql Monitoring System
+        [Service]
+        ExecStart=C:\Software\BigData\mysqld_exporter-0.14.0.windows-amd64/mysqld_exporter \
+        --collect.info_schema.processlist \
+        --collect.info_schema.innodb_tablespaces \
+        --collect.info_schema.innodb_metrics \
+        --collect.perf_schema.tableiowaits \
+        --collect.perf_schema.indexiowaits \
+        --collect.perf_schema.tablelocks \
+        --collect.engine_innodb_status \
+        --collect.perf_schema.file_events \
+        --collect.binlog_size \
+        --collect.info_schema.clientstats \
+        --collect.perf_schema.eventswaits \
+        --config.my-cnf=C:\Software\BigData\mysqld_exporter-0.14.0.windows-amd64/my.cnf
+        [Install]
+        WantedBy=multi-user.target
+
+        # 启动服务
+        systemctl start mysqld_exporter.service
+        # 设置自启动.\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test
+        systemctl enable mysqld_exporter.service
+-----------------
+
+Kafka:
+    cd C:\Software\BigData\kafka_2.12-3.3.2
+    .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+    .\bin\windows\kafka-server-start.bat .\config\server.properties
+    .\bin\windows\kafka-topics.bat --create --bootstrap-server  localhost:2181 --replication-factor 1 --partitions 1 --topic test
+    .\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic test
+
+
+
+ElasticSearch:【http://127.0.0.1:9200】
+    C:\Software\BigData\elasticsearch-7.6.1\bin
+    双击elasticsearch.bat文件
+
+Kibana:【http://127.0.0.1:5601】
+    C:\Software\BigData\kibana-7.6.1-windows-x86_64\bin
+    双击kibana.bat文件
+
+Redis(Windows版Redis安装 -- 单机环境)
+    redis-benchmark.exe  -- redis的性能测试工具
+    redis-check-aof.exe  -- aof文件的检查和修复工具
+    redis-check-dump.exe -- rdb文件的检查和修复工具
+    redis-cli.exe        -- client客户端访问命令
+    redis-server.exe     -- 服务器启动程序
+    redis.window.conf    -- 配置文件，这是个文本文件
+
+    服务启动与关闭：
+        启动服务器：直接执行 redis-server.exe文件
+        默认端口号：6379
+        关闭服务器：直接关闭窗口
+    运行【redis-cli.exe】客户端：双击
+
+

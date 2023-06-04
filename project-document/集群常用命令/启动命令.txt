@@ -1,0 +1,486 @@
+sudo rz  上传文件
+
+##ES##es/123456
+nohup /export/servers/es/elasticsearch-7.6.1/bin/elasticsearch 2>&1 &
+
+http://node01:9200/?pretty
+http://node02:9200/?pretty
+http://node03:9200/?pretty
+
+启动head服务
+cd /export/servers/es/elasticsearch-head/node_modules/grunt/bin/
+
+nohup ./grunt server >/dev/null 2>&1 &
+http://node01:9100/
+
+
+netstat -nltp | grep 9100
+kill -9 8328
+
+启动kibana
+./export/servers/es/kibana-7.6.1-linux-x86_64/bin/kibana
+##############################################
+##Flink##  node01:8081
+-- flink-standalone模式
+启动集群 ./bin/start-cluster.sh
+停止集群 ./bin/stop-cluster.sh
+单独启动：bin/jobmanager.sh start   bin/taskmanager.sh start
+单独停止：bin/jobmanager.sh stop   bin/taskmanager.sh stop
+
+bin/flink run \
+/export/servers/flink-1.13.2-standalone/examples/batch/WordCount.jar \
+--input hdfs://node01:8020/user/mappoi/data/flink_test/wordcount/
+
+-- flink-standalone-HA模式
+bin/flink run \
+/export/servers/flink-1.13.2-standalone/examples/batch/WordCount.jar \
+--input hdfs://node01:8020/user/mappoi/data/flink_test/wordcount/
+
+>>>>>>>>>>>>>>>>>>>>>>>>>
+--***flink-yarn-session模式***
+(yarn-session.sh开辟资源 + flink run 提交任务)
+./bin/yarn-session.sh
+-n (--container) : TaskManager的数量 （1.10已经废弃）
+-s (--slots)：每个TaskManager的Slot数量，默认一个slot一个core，默认每个taskManager的slot的个数为1，
+有时可以多一些taskmanager，做冗余
+-jm: JobManager的内存 （单位：MB）
+-q:显示可用的Yarn资源（内存，内核）
+-tm:每个TaskManager容器的内存（默认值：MB）
+-nm:yarn的appName (现在yarn的ui上的名字）
+-d：后台执行
+
+bin/yarn-session.sh -tm 1024 -s 2 -d 【yarn-session.sh -n 3 -jm 1024 -tm 1024】
+bin/flink run \
+-p 6 \
+examples/batch/WordCount.jar
+
+yarn application -kill application_xxxxxxx
+
+
+--***flink-yarn-per_job模式***
+ 	上面的yarn session是在Hadoop Yarn环境下启动的一个Flink cluster集群，里面的资源可以共享给其他的Flink作业。
+	我还可以再Yarn上启动一个Flink作业，这里我们还是使用./bin/flink，但是不需要事先启动YARN session:
+bin/flink run \
+-m yarn-cluster \
+./examples/batch/WordCount.jar
+
+yarn application -kill application_xxxxxxx
+常用参数：
+--p 程序默认并行度
+下面的参数仅可用于 -m yarn-cluster 模式
+--yjm JobManager可用内存，单位兆
+--ynm YARN程序的名称
+--yq 查询YARN可用的资源
+--yqu 指定YARN队列是哪一个
+--ys 每个TM会有多少个Slot
+--ytm 每个TM所在的Container可申请多少内存，单位兆
+--yD 动态指定Flink参数
+-yd 分离模式（后台运行，不指定-yd, 终端会卡在提交的页面上）
+
+在创建集群的时候，集群的配置参数就写好了，但是往往因为业务需要，要更改一些配置参数，这个时候可以不必因为一个实例的提交而修改conf/flink-conf.yaml;
+可以通过：-yD <arg>                        Dynamic properties
+来覆盖原有的配置信息：比如：
+bin/flink run -m yarn-cluster -yD fs.overwrite-files=true examples/batch/WordCount.jar
+-yD fs.overwrite-files=true -yD taskmanager.network.numberOfBuffers=16368
+
+
+--***flink-yarn-application模式***
+	application模式使用bin/flink run-applocation提交作业，通过-t指定部署环境，目前application模式支持部署再yarn上
+	(-t yarn-application) 和 k8s 上 （-t kubernetes-application）;并支持通过 -D 参数只当通用的运行配置，
+	比如 jobmanager/taskmanager 内存、checkpoint时间间隔等。
+通过 bin/flink run-application -h 可以看到 -D/-t 的详细说明： （-e 已经被废弃，可以忽略）
+./bin/flink run-application \
+-t yarn-application \
+-Djobmanager.memory.process.size=1024m \
+-Dtaskmanager.memory.process.size=1024m \
+-Dyarn.application.name="MyFlinkWordCount" \
+./examples/batch/WordCount.jar --output hdfs://node01:8020/wordcount/output_51
+
+./bin/flink run-application \
+-t yarn-application \
+-p 3 \
+-Djobmanager.memory.process.size=1024m \
+-Dtaskmanager.memory.process.size=1024m \
+-Dyarn.application.name="MyFlinkWordCount" \
+-Dtaskmanager.numberOfTaskSlots=3 \
+./examples/batch/WordCount.jar --output hdfs://node01:8020/wordcount/output_52
+
+当然，指定并发还可以使用?-Dparallelism.default=3，而且社区目前倾向使用 -D+通用配置代替客户端命令参数(比如 -p)。
+所以这样写更符合规范：
+./bin/flink run-application \
+-t yarn-application \
+-Dparallelism.default=3 \
+-Djobmanager.memory.process.size=1024m \
+-Dtaskmanager.memory.process.size=1024m \
+-Dyarn.application.name="MyFlinkWordCount" \
+-Dtaskmanager.numberOfTaskSlots=3 \
+./examples/batch/WordCount.jar --output hdfs://node01:8020/wordcount/output_53
+
+
+bin/flink run-application \
+-t yarn-application \
+-Djobmanager.memory.process.size=1024m \
+-Dtaskmanager.memory.process.size=1024m \
+-Dtaskmanager.numberOfTaskSlots=1 \
+-Dparallelism.default=2 \
+-Dyarn.provided.lib.dirs="hdfs://node01:8020/flink/lib;hdfs://node01:8020/flink/plugins" \
+-Dyarn.application.name="batchWordCount" \
+hdfs://node01:8020/flink/user-tasks/WordCount.jar --output hdfs://node01:8020/wordcount/output_54
+
+可以预先上传 flink 客户端依赖包 (flink-dist/lib/plugin) 到远端存储(一般是 hdfs，或者共享存储)，然后通过 yarn.provided.lib.dirs 参数指定这个路径，flink 检测到这个配置时，就会从该地址拉取 flink 运行需要的依赖包，省去了依赖包上传的过程，yarn-cluster/per-job 模式也支持该配置。在之前的版本中，使用 yarn-cluster/per-job 模式，每个作业都会单独上传 flink 依赖包(一般会有 180MB左右)导致 hdfs 资源浪费，而且程序异常退出时，上传的 flink 依赖包往往得不到自动清理。通过指定 yarn.provided.lib.dirs，所有作业都会使用一份远端 flink 依赖包，并且每个 yarn nodemanager 都会缓存一份，提交速度也会大大提升，对于跨机房提交作业会有很大的优化。
+也可以将 yarn.provided.lib.dirs 配置到 conf/flink-conf.yaml，这时提交作业就和普通作业没有区别了
+./bin/flink run-application \
+-t yarn-application \
+-Djobmanager.memory.process.size=1024m \
+-Dtaskmanager.memory.process.size=1024m \
+-Dyarn.application.name="MyFlinkWordCount" \
+-Dtaskmanager.numberOfTaskSlots=3 \
+/local/path/to/my-application.jar
+
+注意：如果自己指定 yarn.provided.lib.dirs，有以下注意事项：
+?需要将 lib 包和 plugins 包地址用;分开，从上面的例子中也可以看到，将 plugins 包放在 lib 目录下可能会有包冲突错误
+?plugins 包路径地址必须以 plugins 结尾，例如上面例子中的 hdfs://node01:8020/flink/plugins
+?hdfs 路径必须指定 nameservice(或 active namenode 地址)，而不能使用简化方式(例如 hdfs://node01:8020/flink/libs)
+该种模式的操作使得 flink 作业提交变得很轻量，因为所需的 Flink jar 包和应用程序 jar 将到指定的远程位置获取，而不是由客户端下载再发送到集群。这也是社区在 flink-1.11 版本引入新的部署模式的意义所在。
+Application 模式在停止、取消或查询正在运行的应用程序的状态等方面和 flink-1.11 之前的版本一样，可以采用现有的方法。
+
+注意:
+如果使用的是flink on yarn方式，想切换回standalone模式的话，需要删除文件：【/tmp/.yarn-properties-root】
+因为默认查找当前yarn集群中已有的yarn-session信息中的jobmanager
+
+如果是分离模式运行的YARN JOB后，其运行完成会自动删除这个文件
+但是会话模式的话，如果是kill掉任务，其不会执行自动删除这个文件的步骤，所以需要我们手动删除这个文件。
+########################################################
+##Spark##
+-- spark-shell之本地模式
+bin/spark-shell
+# 或者
+bin/spark-shell \
+--master local[2]
+
+-- spark-shell之standalone模式
+/export/servers/spark/bin/spark-shell \
+--master spark://node03:7077
+
+-- spark-shell之standalone-HA模式
+/bin/spark-shell \
+--master spark://node03:7077,node02:7077,node01:7077
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+-- spark-submit之本地模式
+SPARK_HOME=/export/servers/spark
+${SPARK_HOME}/bin/spark-submit \
+--master local[2] \
+--class org.apache.spark.examples.SparkPi \
+${SPARK_HOME}/examples/jars/spark-examples_2.12-3.2.2.jar \
+10
+
+-- spark-submit之standalone模式
+SPARK_HOME=/export/servers/spark
+${SPARK_HOME}/bin/spark-submit \
+--master spark://node01:7077 \
+--class org.apache.spark.examples.SparkPi \
+${SPARK_HOME}/examples/jars/spark-examples_2.12-3.2.2.jar \
+3
+
+-- spark-submit之standalone--HA模式
+SPARK_HOME=/export/servers/spark
+${SPARK_HOME}/bin/spark-submit \
+--master spark://node01:7077,node02:7077 \
+--class org.apache.spark.examples.SparkPi \
+${SPARK_HOME}/examples/jars/spark-examples_2.12-3.2.2.jar \
+10
+
+-- spark-submit之Yarn-client模式
+SPARK_HOME=/export/servers/spark
+${SPARK_HOME}/bin/spark-submit \
+--master yarn \
+--deploy-mode client \
+--driver-memory 512m \
+--executor-memory 512m \
+--num-executors 3 \
+--total-executor-cores 3 \
+--class org.apache.spark.examples.SparkPi ${SPARK_HOME}/examples/jars/spark-examples_2.12-3.2.2.jar \
+10
+
+-- spark-submit之Yarn-cluster模式
+SPARK_HOME=/export/servers/spark
+${SPARK_HOME}/bin/spark-submit \
+--master yarn \
+--deploy-mode cluster \
+--driver-memory 512m \
+--executor-memory 512m \
+--num-executors 3 \
+--total-executor-cores 3 \
+--class org.apache.spark.examples.SparkPi \
+${SPARK_HOME}/examples/jars/spark-examples_2.12-3.2.2.jar \
+10
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+-- spark-sql 模式（spark on hive）
+nohup /export/servers/hive/bin/hive --service metastore &
+/export/servers/spark/bin/spark-sql \
+--master local[2] \
+--conf spark.sql.shuffle.partitions=2
+
+开启sparksql的thrifserver，Spark Thrift Sevser将Spark Application当作一个服务运行，提供beeline客户端和
+JDBC方式访问，与Hive中HiveServer2服务一样的
+/export/servers/spark/sbin/start-thriftserver.sh \
+--hiveconf hive.server2.thrift.port=10001 \
+--hiveconf hive.server2.thrift.bind.host=node03 \
+--master local[2]
+监控WEB UI界面：
+http://node03:4040/jobs/
+在实际大数据分析项目中，使用SparkSQL时，往往启动一个ThriftServer服务，分配较多资源（Executor数目和内存、CPU）
+，不同的用户启动beeline客户端连接，编写SQL语句分析数据。
+停止使用:
+/export/servers/spark/sbin/stop-thriftserver.sh
+
+使用SparkSQL的beeline客户端命令行连接ThriftServer，启动命令如下：
+/export/servers/spark/bin/beeline
+!connect jdbc:hive2://node03:10001
+root
+123456
+########################################################
+##hive查询##
+	方式1：hive  (交互式命令行CLI)
+	方式2.1：hive -e "create database mytest"
+	方式2.2：hive -f /export/server/hive.sql  （直接执行sql脚本）
+	方式3：beeline  (首先启动metastore服务，再启动hiveserver2服务)
+		将Hive当作一个服务启动（类似MySQL数据库，启动一个服务）端口号为10000
+		交互式命令行，CDH版本Hive建议使用此种方式，CLI方式过时。
+		nohup /export/servers/hive/bin/hive --service metastore &
+		nohup /export/servers/hive/bin/hive --service hiveserver2 &
+
+		JDBC/ODBC方式，类似MySQL中JDBC/ODBC方式
+
+	SparkSQL模块是从Hive框架衍生发展而来，所以Hive提供的所有功能（数据交互方式）都支持
+
+########################################################
+##MYSQL##
+/export/servers/mysql-5.7.33/bin/mysqld \
+--defaults-file=/etc/my.cnf \
+--initialize --user=mysql \
+--basedir=/export/servers/mysql-5.7.33 \
+--datadir=/export/servers/mysql-5.7.33/data
+
+service mysql start
+service mysql stop
+mysql -u root -p 123456
+
+netstat -ntuap
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+##Flink应用模式启动##
+	#提交作业
+	$ bin/flink run-application -t yarn-application -c com.atguigu.wc.StreamWordCount FlinkTutorial-1.0-SNAPSHOT.jar
+	$ ./bin/flink list -t yarn-application -Dyarn.application.id=application_XXXX_YY
+	$ ./bin/flink cancel -t yarn-application -Dyarn.application.id=application_XXXX_YY <jobId>
+	./bin/flink run-application -t yarn-application -Dyarn.provided.lib.dirs="hdfs://myhdfs/my-remote-flink-dist-dir" hdfs://myhdfs/jars/my-application.jar
+
+./bin/flink run-application \
+-t yarn-application \
+-Dyarn-provided.lib.dirs="hdfs://node01:8020/flink/task/flink-kafka/" \
+hdfs://node01:8020/flink/task/flink-kafka/flink_kafka.jar \
+hdfs://node01:8020/flink/task/flink-kafka/config.properties
+
+source /etc/profile
+scp -r /etc/profile root@node02:/etc/
+scp -r /etc/profile root@node03:/etc/
+
+scp -r ./yarn-site.xml root@node03:$PWD
+
+ln -s ./hadoop-2.7.5 hadoop
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+##Linux常用文件路径##
+vim /etc/profile
+source /etc/profile
+export PATH=/usr/local/cuba/bin:%PATH
+
+yum install -y lrzsz #安装 lrzsz
+rz 然后指定文件 #上传指定文件
+sz 文件名 # 下载文件
+#######################
+##端口号##
+Zookeeper服务端口：2181
+HDFS文件系统端口号：hdfs://node1:8020/flink-checkpoints/checkpoint
++ 1、File文件作为参数传递时格式：
+	+ 本地文件系统：
+		+ windows或Linux文件系统：///D:/a.txt
+		+ hdfs文件系统：hdfs:///wordcount/input/words.txt
+	+ 异地文件系统：
+		+ windows或Linux文件系统：node1:
+		+ hdfs文件系统：hdfs://node1:8082/wordcount/output
+
++ 2、各个软件默认端口
+2181：Zookeeper的通信端口
+8020 ：HDFS文件输入输出端口
+9083：hive metastore服务端口
+10000：hive的hiveserver2服务端口
+10001：spark的thriftserver服务端口 （自定义的）
+9092：Kafka服务端端口号
+
++ 3、web UI界面：
+	+ 50070 ：HDFS Web UI界面
+	+ 8088：YARN Web UI界面
+	+ 8080：Spark集群状态页面查看
+	+ 2181：zookeeper通信端口
+	+ 7077： Spark Master查看界面 （备用Master也用这个端口号）
+	+ 18080：Spark HistoryServer服务WEB UI页面
+	+ 4040：Spark Jobs 客户端任务查看页面 (localhost:4040)
+#######################
+##hive的使用##
+metastore和hiveserver2 （hive的使用）
+	单独开启metastore服务：nohup hive --service metastore &
+	单独开启hiveserver2服务：nohup hive --service hiveserver2 &
+
+/export/servers/hive-2.1.0/bin/beeline
+root/123456
+
+#######################
+##NetCat## 安装：yum install -y nc
+	例：nc -l -p 6789       【nc -lk 7777      Idea连结Linux用这个】
+	例：nc node01 6789
+##############################################################
+##zookeeper:##
+	zkServer.sh start
+	zkCli.sh start
+	关闭：
+		zkServer.sh stop
+		zkCli.sh stop
+shell操作：
+	1.客户端连接： 运行zkCli.sh -server ip 进行命令行工具
+	bin/zkCli.sh -server node01:2181
+	2.shell基本操作：
+		创建节点：create [-s][-e] path data acl
+			-s和-e分别指定节点特性，顺序或临时节点，若不指定，则表示持久节点；acl用来进行权限控制。
+			【创建顺序节点】：create -s /test 123
+			【创建临时节点】：create -e /test-temp 123temp
+			【创建持久节点】：create /test-p 123p
+		读取节点：
+			ls命令： 列出zk指定节点下的所有子节点；
+			get命令：获取zk指定节点的数据内容和属性信息；
+			格式：
+				ls path [watch]
+				get path [watch]
+				ls2 path [watch
+			属性：
+				dataVersion -- 数据版本号，每次对节点进行set操作，dataVersion的值都会增加1（即使设置的是相同的数据），可有效避免了数据更新时出现的先后顺序问题。
+				cversion：子节点的版本号。当znode的子节点有变化时，cversion的值就会增加1；
+				cZxid：Znode创建的事务id。
+				mZxid: Znode被修改的事务id, 即每次对znode的修改都会更新mZxid；
+				ctime: 节点创建时的时间戳；
+				mtime: 节点最新一次更新发生时的时间戳；
+				ephemeralOwner:如果该节点为临时节点，ephemeralOwner值表示与该节点绑定的session id.如果不是，ephemeralOwner值为0；
+			在client和server通信之前，首先需要建立连接，该连接称为session。连接建立后，如果发生连接超时、授权失败，或者显式关闭连接，连接便处于CLOSED状态，此时session结束。
+		更新索引：
+			格式：set path data [version]
+			  data就是要更新的新内容，version表示数据版本；
+		删除节点：
+			格式: delete path [version]
+			  若删除节点存在子节点，那么无法删除该节点，必须先删除子节点，再删除父节点；
+			  rmr path:可以递归删除节点。
+		对节点进行限制：quota
+			格式1： setquota -n|-b val path
+			   n:表示子节点的最大个数；
+			   b:表示数据值的最大长度；
+	  		   val:子节点最大个数或数据值的最大长度；
+			   path：节点路径；
+			格式2：listquota path :列出指定节点的quota
+			  子节点个数为2， bytes=-1表示没有限制；
+			注意：在实际操作的时候，虽然设置了最大的节点数后，依然可以在整个节点下添加多个子节点，只是会在zk中的日志文件中记录一下警告信息；
+			格式3：delquota [-n|-b] path： 删除 quota
+		其它命令：
+			history 列出命令历史
+			redo: 该命令可以重新执行指定命令编号的历史命令，命令编号可以通过；
+
+###############################################################
+##hadoop:##
+	start-dfs.sh
+	start-yarn.sh
+	mr-jobhistory-daemon.sh start historyserver
+	关闭：
+		stop-dfs.sh
+		stop-yarn.sh
+		mr-jobhistory-daemon.sh stop historyserver
+###############################################################
+##Mysql:##
+	service mysqld start
+	systemctl start mysql[d]
+	关闭：
+	service mysqld stop
+	## 设置mysql开机启动
+	chkconfig mysqld on
+###############################################################
+##hive:##
+	nohup hive --service metastore & >> nohup.out
+	nohup hive --service hiveserver2 & >> hiveserver2.out
+	beeline
+		!connect jdbc:hive2://node03:10000
+
+	关闭：
+	ps -ef | grep hive
+	kill -9 pid
+###############################################################
+##kafka:##
+	前台:
+	cd /export/servers/kafka_2.11-0.10.0.0
+	bin/kafka-server-start.sh config/server.properties
+	后台:
+	cd /export/servers/kafka_2.11-0.10.0.0
+	nohup bin/kafka-server-start.sh config/server.properties 2>&1 &
+	停止:
+	cd /export/servers/kafka_2.11-0.10.0.0
+	bin/kafka-server-stop.sh
+
+	##创建 topic
+	bin/kafka-topics.sh --create --topic vehicledata-dev --replication-factor 2 --partitions 3 --zookeeper node01:2181
+
+	消费数据：
+	bin/kafka-console-consumer.sh --bootstrap-server node01:9092,node02:9092,node03:9092 --from-beginning --topic vehicledata-dev
+
+	生产数据：
+	bin/kafka-console-producer.sh --broker-list node01:9092 --topic vehicledata-dev
+
+	kafka-console-producer.sh --broker-list node01:9092 --topic mappoi-operation-log
+
+	删除topic：
+	./bin/kafka-topics.sh  --delete --zookeeper node01:2181  --topic vehicledata-dev
+	bin/zkCli.sh -server node01:2181
+	rmr /brokers/topics/vehicledata-dev
+###############################################################
+##hbase: node01 hmaster##
+	start-hbase.sh
+	hbase-daemon.sh start thrift
+###############################################################
+##phoenix:##
+	/export/servers/apache-phoenix-5.0.0-HBase-2.0-bin/bin/sqlline.py
+###############################################################
+##zeppelin:## - node03
+	/export/servers/zeppelin-0.8.0-bin-all/bin/zeppelin-daemon.sh start
+	/export/servers/zeppelin-0.8.0-bin-all/bin/zeppelin-daemon.sh stop
+###############################################################
+##redis:##
+	/usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf
+
+###############################################################
+##superset:##
+	/export/servers/superset-start.sh
+###############################################################
+##mongo:##
+	/export/servers/mongodb-linux-x86_64-rhel70-3.4.24/bin/mongod &
+
+	停止
+	/export/servers/mongodb-linux-x86_64-rhel70-3.4.24/bin/mongod --shutdown
+	查看mongodb端口号
+	netstat -ntulp | grep 27017
+                查看mongdb数据库
+                find / -name "mongod.lock"
+###############################################################
+##flink:##
+	start-cluster.sh
+###############################################################
+##dolphinscheduler##
+##后台服务##
+$DOLPHINSCHEDULER_HOME/bin/start-all.sh
+##前台服务##
+systemctl start nginx
+###############################################################

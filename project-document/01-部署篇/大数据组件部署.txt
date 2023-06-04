@@ -1,0 +1,25 @@
+***【linux】***
+vi /etc/sysconfig/network-scripts/ifcfg-ens33
+systemctl status network.service -- 查看网络状态
+service network restart -- 重启网络（注意bd01节点的网络配置文件是ifcfg-ens34）
+环境配置：
+    1) 修改ip配置文件,设置IP地址
+    vim /etc/sysconfig/network-scripts/ifcfg-ens33
+    2) 关闭防火墙
+    1、配置每台虚拟机主机名:
+    vim /etc/hostname
+    2、配置每台虚拟机域名映射
+    vim /etc/hosts
+zookeepr
+mysql
+hadoop
+hbase
+kafka
+redis
+spark
+flink
+ELK
+FineBI
+ClickHouse
+
+***【window】***

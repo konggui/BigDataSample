@@ -1,0 +1,26 @@
+Flink采用的是yarn-per-job模式
+Spark采用的是yarn-cluster模式
+
+flink run
+-d
+-m yarn-cluster
+-p 12
+-ynm DeltaTask
+-yqu maps_mappoi_queue
+-ys 4
+-ytm 16g
+-yjm 4g
+-c main类包路径
+-yt /opt/stream_client/flink/flink-connector-kafka-0.10_2.11-1.11-1.0.2-SP9.jar
+-yt /opt/stream_client/flink/flink-connector-kafka-base_2.11-1.11-1.0.2-SP9.jar
+-yt /opt/stream_client/flink/secret
+-yt /opt/stream_client/flink/customConfig
+-yD security.kerberos.login.principal=mappoi
+-yD security.kerberos.login.keytab=/opt/kerberos/mappoi/user.keytab
+-yD env.java.opts.taskmanager=-Djava.security.krb5.conf=/opt/bigdata/kerberosClient/etc/kdc.conf -Dpoi_template=/customConfig/config0 -Ddetect_config=/customConfig/config1
+-yD state.savepoints.dir=hdfs:///flink/savepoint/9577/9577
+-yD state.backend.fs.checkpointdir=hdfs:///flink/checkpoints/9577/9577
+-yD state.checkpoints.dir=hdfs:///flink/checkpoints/9577/9577
+-yD yarn.tags=9577
+-yD env.java.opts.jobmanager=-Djava.security.krb5.conf=/opt/bigdata/kerberosClient/etc/kdc.conf -Dpoi_template=/customConfig/config0 -Ddetect_config=/customConfig/config1
+/opt/packages/MapPOITask/jar/DeltaTask.jar /opt/config/app_config.properties /opt/config/customConfig/config0 /opt/config/customConfig/config1

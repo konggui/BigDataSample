@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/JavaSpark-322/JavaSpark-322.iml" filepath="$PROJECT_DIR$/JavaSpark-322/JavaSpark-322.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PythonFlinkAndJava/PyFlink/PyFlink.iml" filepath="$PROJECT_DIR$/PythonFlinkAndJava/PyFlink/PyFlink.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PythonFlinkAndJava/PySpark/PySpark.iml" filepath="$PROJECT_DIR$/PythonFlinkAndJava/PySpark/PySpark.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PythonSparkAndFlink/PySpark-3/PySpark-3.iml" filepath="$PROJECT_DIR$/PythonSparkAndFlink/PySpark-3/PySpark-3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PythonSparkAndFlink/PythonSparkAndFlink.iml" filepath="$PROJECT_DIR$/PythonSparkAndFlink/PythonSparkAndFlink.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UserProfile/UserProfile.iml" filepath="$PROJECT_DIR$/UserProfile/UserProfile.iml" />
+    </modules>
+  </component>
+</project>

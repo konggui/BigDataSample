@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.aishuang.bigdata</groupId>
+    <artifactId>sample-project</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>AsDistributeTask</module>
+        <module>AsAccessTask</module>
+        <module>AsStandardizeTask</module>
+        <module>AsAggregateTask</module>
+        <module>AsAnalysisTask</module>
+        <module>AsCommonToolTask</module>
+        <module>DesignPattern</module>
+        <module>JavaSpark-322</module>
+        <module>JavaFlink-1140</module>
+        <module>SuanFa</module>
+        <module>UserProfile</module>
+        <module>JavaFlink-112</module>
+        <module>JavaFlink-1143</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+
+        <!-- 编码格式 -->
+        <encoding.version>UTF-8</encoding.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- maven相关 -->
+        <scala-maven-plugin.version>4.8.0</scala-maven-plugin.version>
+        <maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
+        <maven-assembly-plugin.version>2.6</maven-assembly-plugin.version>
+        <maven-shade-plugin.version>3.1.1</maven-shade-plugin.version>
+
+        <!-- 编程语言 -->
+        <java.version>1.8</java.version>
+        <scala.version>2.12.17</scala.version>
+        <scala.binary.version>2.12</scala.binary.version>
+
+        <!-- 大数据组件 -->
+        <hadoop.version>3.3.5</hadoop.version>
+        <hbase.version>2.1.5</hbase.version>
+        <phoenix.version>5.0.0-HBase-2.0</phoenix.version>
+        <hive.version>2.3.9</hive.version>
+        <spark.version>3.2.2</spark.version>
+        <flink.version>1.10.0</flink.version>
+        <kafka.version>3.4.0</kafka.version>
+        <druid.version>1.1.12</druid.version>
+
+        <!-- 日志打印 -->
+        <log4j.version>2.20.0</log4j.version>
+        <slf4j.version>2.0.7</slf4j.version>
+        <logback.version>1.1.3</logback.version>
+
+        <!-- 数据库-->
+        <mysql.version>5.1.47</mysql.version>
+        <mongodb-driver.version>3.4.2</mongodb-driver.version>
+        <jedis.version>2.9.0</jedis.version>
+
+        <!-- Java -->
+        <fastjson.version>1.2.70</fastjson.version>
+        <json.version>20190722</json.version>
+        <jackson.version>2.10.1</jackson.version>
+        <gson.version>2.8.6</gson.version>
+        <guava.version>23.0</guava.version>
+
+        <!-- 微服务 -->
+        <spring-boot.version>2.1.13.RELEASE</spring-boot.version>
+        <mybatis-spring.version>2.1.1</mybatis-spring.version>
+        <springfox-version>2.9.2</springfox-version>
+        <httpcore.version>4.4.5</httpcore.version>
+        <httpclient.version>4.5.12</httpclient.version>
+        <httpasyncclient.version>4.1.4</httpasyncclient.version>
+
+        <!-- IDEA便捷插件 -->
+        <lombok.version>1.18.12</lombok.version>
+
+        <!-- 地图相关 -->
+        <geodesy.version>1.1.3</geodesy.version>
+
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>bintray</id>
+            <name>Bintray Repository</name>
+            <url>https://repos.spark-packages.org</url>
+        </repository>
+
+        <repository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>https://maven.aliyun.com/nexus/content/groups/public/</url>
+        </repository>
+
+        <repository>
+            <id>osc</id>
+            <name>central</name>
+            <url>http://maven.aliyun.com/nexus/content/repositories/central</url>
+        </repository>
+
+        <repository>
+            <id>osc_thirdparty</id>
+            <name>thirdparty</name>
+            <url>http://maven.aliyun.com/nexus/content/repositories/central</url>
+        </repository>
+    </repositories>
+
+</project>
